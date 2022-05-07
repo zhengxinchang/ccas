@@ -1,5 +1,7 @@
 <template>
-$END$
+  <v-sheet>
+    <iframe src="/ccas/docs/" height="900" width="900" name="CCAS Documentation" scrolling="auto" sandbox="allow-scripts"></iframe>
+  </v-sheet>
 </template>
 
 <script>

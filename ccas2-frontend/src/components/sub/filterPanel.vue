@@ -20,7 +20,7 @@ export default {
 name: "filterPanel",
   data(){
   return{
-    expandFilter:false
+    expandFilter:true
   }
   }
 }

@@ -8,7 +8,7 @@
         <v-sheet min-height="60" max-height="60" rounded class="px4 mx-6" >
               <v-row dense align="center">
                 <v-col>
-                  <v-breadcrumbs :items="[{text:'home',disabled:false,href:'/home'},{text:'results',disabled:true}]"></v-breadcrumbs>
+                  <v-breadcrumbs :items="[{text:'home',disabled:false,href:'/home'},{text:'check results',disabled:true}]"></v-breadcrumbs>
                 </v-col>
               </v-row>
 
@@ -37,13 +37,13 @@
                       </v-col>
                       <v-col cols="9" class="text-left">
                         <v-text-field
-                          v-model="seriesid"
+                          v-model="jobid"
                           clearable
                           dense
                           flat
                           hide-details
                           label="Job ID"
-                          required
+                          :rules="[rules.required]"
                           rounded
                           solo-inverted
                         ></v-text-field>
@@ -67,13 +67,13 @@
                       </v-col>
                       <v-col cols="6"  class="text-left">
                         <v-btn
-                          :loading="isloadingdemo"
+
                           class="mx-auto text-body-2"
                           color="teal"
                           dark
                           width="60%"
                           outlined
-                          @click="loaddemo"
+                          @click="loadDemo"
                         >
                           <v-icon>
                             mdi-lifebuoy
@@ -106,8 +106,62 @@
 </template>
 
 <script>
+import Axios from 'axios'
 export default {
-name: "results"
+name: "checkResults",
+  data(){
+  return{
+    isloadingres:false,
+    jobid:null,
+    rules:{
+      required: value => !!value || 'Required.',
+    }
+  }
+  },
+  methods:{
+    loadRealReults(){
+      // this.$router.push('/annoresults/12345')
+      // this.jobid = "20220426162231_d1b088df-ec5a-4cdb-8795-b849bfa95468"
+      if(this.jobid != null){
+          Axios.post(
+            "/ccas/api/checkjob",
+            {},
+            {params:{
+              jobid:this.jobid,
+              }}
+          ).then(res=>{
+            if (res.data.status == "1:running"){
+
+              alert("Job: "+this.jobid + " is still running. Please wait a few minutes and check it again.")
+            }
+            else if (res.data.status == "3:crashed"){
+
+              alert("Job: "+this.jobid + " has some errors. This may be caused by incorrect input file format. Please check your input file and submit again. If you encounter this problem again, please contact email: zhengxichang@big.ac.cn .")
+            }
+            else if(res.data.status == "2:finished"){
+              this.$router.push({ name: 'annoresults', params: { jobid: this.jobid }})
+            }
+          })
+        // this.$router.push('/annoresults/'+this.jobid)
+
+      }else{
+        alert("Job id is emtpy! Please provide job id before click check button.")
+      }
+
+    },
+    loadDemo(){
+      // this.jobid = "20220426165759_396258a7-c7f3-4337-99b5-f757fb9f69d6"
+      this.jobid = this.$store.state.demoJobid
+      if(this.jobid != null){
+
+        // this.$router.push('/annoresults/'+this.jobid)
+        this.$router.push({ name: 'annoresults', params: { jobid: this.jobid }})
+      }else{
+        alert("Job id is emtpy! Please provide job id before click check button.")
+      }
+    }
+
+  }
 }
 </script>
 
