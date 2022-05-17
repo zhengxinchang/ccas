@@ -46,132 +46,155 @@
 
 <script>
 import SubOverviewSSGSEA_echarts_bar from "./subOverviewSSGSEA_echarts_bar";
+import Axios from "axios";
 export default {
 name: "subOverviewSSGSEA",
   components: {SubOverviewSSGSEA_echarts_bar},
   props:["jobid"],
   data(){
   return{
-    dat: [
-      {
-        "Name": "TIMOFEEVA_GROWTH_STRESS_VIA_STAT1_DN",
-        "Value": "0.499448732083793"
-      },
-      {
-        "Name": "GCM_PSME1",
-        "Value": "0.499448732083793"
-      },
-      {
-        "Name": "LAKE_ADULT_KIDNEY_C7_PROXIMAL_TUBULE_EPITHELIAL_CELLS_S3",
-        "Value": "0.498893046153348"
-      },
-      {
-        "Name": "GOCC_POLYSOMAL_RIBOSOME",
-        "Value": "0.498346196251378"
-      },
-      {
-        "Name": "HP_ABNORMAL_GRANULOCYTOPOIETIC_CELL_MORPHOLOGY",
-        "Value": "0.498346196251378"
-      },
-      {
-        "Name": "HP_ABNORMAL_NUMBER_OF_GRANULOCYTE_PRECURSORS",
-        "Value": "0.498346196251378"
-      },
-      {
-        "Name": "LUI_THYROID_CANCER_CLUSTER_3",
-        "Value": "0.498346196251378"
-      },
-      {
-        "Name": "LUI_TARGETS_OF_PAX8_PPARG_FUSION",
-        "Value": "0.498346196251378"
-      },
-      {
-        "Name": "CHNG_MULTIPLE_MYELOMA_HYPERPLOID_UP",
-        "Value": "0.498346196251378"
-      },
-      {
-        "Name": "GCM_TPT1",
-        "Value": "0.498346196251378"
-      },
-      {
-        "Name": "GNF2_GLTSCR2",
-        "Value": "0.498346196251378"
-      },
-      {
-        "Name": "WP_CYTOPLASMIC_RIBOSOMAL_PROTEINS",
-        "Value": "0.49834384101322"
-      },
-      {
-        "Name": "HP_ABNORMALITY_OF_THE_THENAR_EMINENCE",
-        "Value": "0.49834384101322"
-      },
-      {
-        "Name": "HP_NORMOCHROMIC_ANEMIA",
-        "Value": "0.49834384101322"
-      },
-      {
-        "Name": "HP_RETICULOCYTOPENIA",
-        "Value": "0.49834384101322"
-      },
-      {
-        "Name": "HP_OSTEOSARCOMA",
-        "Value": "0.49834384101322"
-      },
-      {
-        "Name": "HP_ACUTE_MYELOID_LEUKEMIA",
-        "Value": "0.49834384101322"
-      },
-      {
-        "Name": "HP_MALIGNANT_GENITOURINARY_TRACT_TUMOR",
-        "Value": "0.49834384101322"
-      },
-      {
-        "Name": "HP_DUPLICATION_OF_THUMB_PHALANX",
-        "Value": "0.49834384101322"
-      },
-      {
-        "Name": "HP_PARTIAL_DUPLICATION_OF_THE_PHALANX_OF_HAND",
-        "Value": "0.49834384101322"
-      },
-      {
-        "Name": "HP_PERSISTENCE_OF_HEMOGLOBIN_F",
-        "Value": "0.49834384101322"
-      },
-      {
-        "Name": "HP_ABNORMAL_NUMBER_OF_ERYTHROID_PRECURSORS",
-        "Value": "0.49834384101322"
-      },
-      {
-        "Name": "HP_ERYTHROID_HYPOPLASIA",
-        "Value": "0.49834384101322"
-      },
-      {
-        "Name": "HP_PURE_RED_CELL_APLASIA",
-        "Value": "0.49834384101322"
-      },
-      {
-        "Name": "BUSSLINGER_GASTRIC_PPP1R1B_POSITIVE_CELLS",
-        "Value": "0.49834384101322"
-      },
-      {
-        "Name": "MORF_JUND",
-        "Value": "0.49834384101322"
-      },
-      {
-        "Name": "GOBP_NEGATIVE_REGULATION_OF_UBIQUITIN_PROTEIN_TRANSFERASE_ACTIVITY",
-        "Value": "0.497243660418964"
-      },
-      {
-        "Name": "GOBP_POSITIVE_REGULATION_OF_SIGNAL_TRANSDUCTION_BY_P53_CLASS_MEDIATOR",
-        "Value": "0.497243660418964"
-      },
-      {
-        "Name": "GOBP_REGULATION_OF_UBIQUITIN_PROTEIN_LIGASE_ACTIVITY",
-        "Value": "0.497243660418964"
-      }
-      ],
+    // dat: [
+    //   {
+    //     "Name": "TIMOFEEVA_GROWTH_STRESS_VIA_STAT1_DN",
+    //     "Value": "0.499448732083793"
+    //   },
+    //   {
+    //     "Name": "GCM_PSME1",
+    //     "Value": "0.499448732083793"
+    //   },
+    //   {
+    //     "Name": "LAKE_ADULT_KIDNEY_C7_PROXIMAL_TUBULE_EPITHELIAL_CELLS_S3",
+    //     "Value": "0.498893046153348"
+    //   },
+    //   {
+    //     "Name": "GOCC_POLYSOMAL_RIBOSOME",
+    //     "Value": "0.498346196251378"
+    //   },
+    //   {
+    //     "Name": "HP_ABNORMAL_GRANULOCYTOPOIETIC_CELL_MORPHOLOGY",
+    //     "Value": "0.498346196251378"
+    //   },
+    //   {
+    //     "Name": "HP_ABNORMAL_NUMBER_OF_GRANULOCYTE_PRECURSORS",
+    //     "Value": "0.498346196251378"
+    //   },
+    //   {
+    //     "Name": "LUI_THYROID_CANCER_CLUSTER_3",
+    //     "Value": "0.498346196251378"
+    //   },
+    //   {
+    //     "Name": "LUI_TARGETS_OF_PAX8_PPARG_FUSION",
+    //     "Value": "0.498346196251378"
+    //   },
+    //   {
+    //     "Name": "CHNG_MULTIPLE_MYELOMA_HYPERPLOID_UP",
+    //     "Value": "0.498346196251378"
+    //   },
+    //   {
+    //     "Name": "GCM_TPT1",
+    //     "Value": "0.498346196251378"
+    //   },
+    //   {
+    //     "Name": "GNF2_GLTSCR2",
+    //     "Value": "0.498346196251378"
+    //   },
+    //   {
+    //     "Name": "WP_CYTOPLASMIC_RIBOSOMAL_PROTEINS",
+    //     "Value": "0.49834384101322"
+    //   },
+    //   {
+    //     "Name": "HP_ABNORMALITY_OF_THE_THENAR_EMINENCE",
+    //     "Value": "0.49834384101322"
+    //   },
+    //   {
+    //     "Name": "HP_NORMOCHROMIC_ANEMIA",
+    //     "Value": "0.49834384101322"
+    //   },
+    //   {
+    //     "Name": "HP_RETICULOCYTOPENIA",
+    //     "Value": "0.49834384101322"
+    //   },
+    //   {
+    //     "Name": "HP_OSTEOSARCOMA",
+    //     "Value": "0.49834384101322"
+    //   },
+    //   {
+    //     "Name": "HP_ACUTE_MYELOID_LEUKEMIA",
+    //     "Value": "0.49834384101322"
+    //   },
+    //   {
+    //     "Name": "HP_MALIGNANT_GENITOURINARY_TRACT_TUMOR",
+    //     "Value": "0.49834384101322"
+    //   },
+    //   {
+    //     "Name": "HP_DUPLICATION_OF_THUMB_PHALANX",
+    //     "Value": "0.49834384101322"
+    //   },
+    //   {
+    //     "Name": "HP_PARTIAL_DUPLICATION_OF_THE_PHALANX_OF_HAND",
+    //     "Value": "0.49834384101322"
+    //   },
+    //   {
+    //     "Name": "HP_PERSISTENCE_OF_HEMOGLOBIN_F",
+    //     "Value": "0.49834384101322"
+    //   },
+    //   {
+    //     "Name": "HP_ABNORMAL_NUMBER_OF_ERYTHROID_PRECURSORS",
+    //     "Value": "0.49834384101322"
+    //   },
+    //   {
+    //     "Name": "HP_ERYTHROID_HYPOPLASIA",
+    //     "Value": "0.49834384101322"
+    //   },
+    //   {
+    //     "Name": "HP_PURE_RED_CELL_APLASIA",
+    //     "Value": "0.49834384101322"
+    //   },
+    //   {
+    //     "Name": "BUSSLINGER_GASTRIC_PPP1R1B_POSITIVE_CELLS",
+    //     "Value": "0.49834384101322"
+    //   },
+    //   {
+    //     "Name": "MORF_JUND",
+    //     "Value": "0.49834384101322"
+    //   },
+    //   {
+    //     "Name": "GOBP_NEGATIVE_REGULATION_OF_UBIQUITIN_PROTEIN_TRANSFERASE_ACTIVITY",
+    //     "Value": "0.497243660418964"
+    //   },
+    //   {
+    //     "Name": "GOBP_POSITIVE_REGULATION_OF_SIGNAL_TRANSDUCTION_BY_P53_CLASS_MEDIATOR",
+    //     "Value": "0.497243660418964"
+    //   },
+    //   {
+    //     "Name": "GOBP_REGULATION_OF_UBIQUITIN_PROTEIN_LIGASE_ACTIVITY",
+    //     "Value": "0.497243660418964"
+    //   }
+    //   ],
+    dat:[],
     thisWidth:"600"
   }
+  },
+  watch:{
+    'jobid':{
+      handler:function (val) {
+        Axios.post(
+          "/ccas/api/get_overview_ssgsea_raw",
+          {},
+          {
+            params: {
+              jobid: this.jobid,
+            }
+          }
+        ).then(res => {
+          this.dat = res.data.data
+
+        })
+      },
+      deep:true,
+      immediate:true,
+    }
+
   }
 }
 </script>

@@ -37,7 +37,7 @@
             <v-col class="mt-3" cols="6">
               <div class="white--text text--darken-1 text-h5"
               >
-                One-stop and comprehensive biomarker identification platform for individual cancer genome at multi-omics
+                One-stop and comprehensive annotation system for individual cancer genome at multi-omics
                 level
               </div>
             </v-col>
@@ -52,16 +52,16 @@
               >
                 <div class="white--text text-h4 py-2">395</div>
                 <v-divider dark></v-divider>
-                <div class="white--text text-h5 py-2">Cancer types</div>
+                <div class="white--text text-h5 py-2">Cancer subtypes</div>
               </v-card>
             </v-col>
             <v-col class="mt-3" cols="12" lg="3" md="12" sm="12" xl="3">
               <v-card class="px-2 py-6 z-transparent " elevation="3" rounded
                       @click="setTabAndRouter('k_usage','/doc')"
               >
-                <div class="white--text text-h4 py-2">5</div>
+                <div class="white--text text-h4 py-2">6</div>
                 <v-divider dark></v-divider>
-                <div class="white--text text-h5 py-2">Annotation levels</div>
+                <div class="white--text text-h5 py-2">Annotation aspects</div>
               </v-card>
             </v-col>
 
@@ -69,7 +69,7 @@
               <v-card class="px-2 py-6 z-transparent " elevation="3" rounded
                       @click="setTabAndRouter('k_resources','/doc')"
               >
-                <div class="white--text text-h4 py-2">17</div>
+                <div class="white--text text-h4 py-2">20</div>
                 <v-divider dark></v-divider>
                 <div class="white--text text-h5 py-2">Resources</div>
               </v-card>
@@ -517,50 +517,10 @@
               </v-row>
 
               <v-row align="center" class="px-3">
-                <!--                <v-col cols="4">-->
-                <!--                  <v-row class="mynarrowline">-->
-                <!--                    <v-col cols="1" offset="1">-->
-                <!--                      <v-switch-->
-                <!--                        v-model="showEmail"-->
-                <!--                        color="teal"-->
-                <!--                        hide-details-->
-
-                <!--                      ></v-switch>-->
-                <!--                    </v-col>-->
-                <!--                    <v-col cols="9">-->
-                <!--                      <v-text-field-->
-                <!--                        v-model="upload_data_email"-->
-                <!--                        :disabled="!showEmail"-->
-                <!--                        :rules="[rules.email]"-->
-                <!--                        clearable-->
-                <!--                        label="Email"-->
-                <!--                      ></v-text-field>-->
-                <!--                    </v-col>-->
-                <!--                  </v-row>-->
-                <!--                </v-col>-->
-                <!--                <v-col cols="4">-->
-                <!--                  <v-row class="mynarrowline">-->
-                <!--                    <v-col cols="1" offset="1">-->
-                <!--                      <v-switch-->
-                <!--                        v-model="showJobTitle"-->
-                <!--                        color="teal"-->
-                <!--                        hide-details-->
-                <!--                      ></v-switch>-->
-                <!--                    </v-col>-->
-                <!--                    <v-col cols="9">-->
-                <!--                      <v-text-field-->
-                <!--                        v-model="upload_data_jobtitle"-->
-                <!--                        :disabled="!showJobTitle"-->
-                <!--                        clearable-->
-                <!--                        label="Job title"-->
-                <!--                      ></v-text-field>-->
-                <!--                    </v-col>-->
-                <!--                  </v-row>-->
-                <!--                </v-col>-->
                 <v-col cols="6" offset="3">
                   <v-row class="mynarrowline">
 
-                    <v-col cols="5" offset="1">
+                    <v-col cols="4" >
                       <v-btn
                         :disabled="submitting"
                         :loading="submitting"
@@ -576,7 +536,21 @@
 
                       </v-btn>
                     </v-col>
-                    <v-col cols="5">
+                    <v-col cols="4">
+                      <v-btn
+
+                        class="mx-4"
+                        color="teal"
+                        dark
+                        outlined
+                        width="100%"
+                        to="/checkresults"
+                      >
+                        <v-icon>mdi-chemical-weapon</v-icon>
+                        Check Results
+                      </v-btn>
+                    </v-col>
+                    <v-col cols="4">
                       <v-btn
 
                         class="mx-4"
@@ -592,6 +566,7 @@
                         Demo Results
                       </v-btn>
                     </v-col>
+
                   </v-row>
                 </v-col>
               </v-row>

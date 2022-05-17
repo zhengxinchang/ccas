@@ -560,6 +560,29 @@
                     </v-chip>
                   </template>
                 </vxe-column>
+
+                <vxe-column align="center" field="numofcancer" sortable title="#Cancer cohorts have variants in this gene">
+                  <template #header="{column}">
+                    <span>{{ column.title }}</span><span><common-help-message>
+                    Number of cancer cohorts that have variants in this gene.
+                  </common-help-message></span>
+                  </template>
+                  <template #default="{row}">
+                    <v-chip :color="row.numofcancer == 0?'grey': 'teal' " dark label samll>{{ row.numofcancer }}
+                    </v-chip>
+                  </template>
+                </vxe-column>
+
+                <vxe-column align="center" field="numofpaper" sortable title="#Publications of this gene">
+                  <template #header="{column}">
+                    <span>{{ column.title }}</span><span><common-help-message>
+                    Number of Publications assocated with this gene.
+                  </common-help-message></span>
+                  </template>
+                  <template #default="{row}">
+                    <v-chip :color="row.numofpaper == 0?'grey': 'teal' " dark label samll>{{ row.numofpaper }}</v-chip>
+                  </template>
+                </vxe-column>
                 <vxe-column align="center" field="numofdruginteraction" sortable
                             title="#Drug interactions of this gene">
                   <template #header="{column}">
@@ -571,16 +594,6 @@
                     <v-chip :color="row.numofdruginteraction == 0?'grey': 'teal' " dark label samll>
                       {{ row.numofdruginteraction }}
                     </v-chip>
-                  </template>
-                </vxe-column>
-                <vxe-column align="center" field="numofpaper" sortable title="#Publications of this gene">
-                  <template #header="{column}">
-                    <span>{{ column.title }}</span><span><common-help-message>
-                    Number of Publications assocated with this gene.
-                  </common-help-message></span>
-                  </template>
-                  <template #default="{row}">
-                    <v-chip :color="row.numofpaper == 0?'grey': 'teal' " dark label samll>{{ row.numofpaper }}</v-chip>
                   </template>
                 </vxe-column>
                 <vxe-column title="Detail">

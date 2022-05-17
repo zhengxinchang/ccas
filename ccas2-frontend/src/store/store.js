@@ -10,7 +10,7 @@ export default new Vuex.Store({
     doid_dict:null,
     doid_dict2list:null,
     // mainColor:'#DA664D',
-    demoJobid:"20220503124420_3f197fd9-87c1-4b28-bf42-d2ad59c8ff18",
+    demoJobid:"20220512162210_be2d30b8-f0b7-48b9-82af-c03521d692b3",
     mainColor:'#115270',
     selected_doid:null,
     currentTab:0,

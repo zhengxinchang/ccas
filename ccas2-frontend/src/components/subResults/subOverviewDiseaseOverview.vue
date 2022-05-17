@@ -121,10 +121,25 @@
         </v-card>
       </v-col>
     </v-row>
+    <v-row>
+      <v-spacer>
+
+      </v-spacer>
+      <v-col cols="2">
+        <v-btn
+        color="teal"
+        rounded
+        elevation="0"
+        dark
+        @click="downloadEvt('http://ngdc.cncb.ac.cn/ccas/api/download_sqlite3?jobid='+$route.params.jobid)"
+        >Download annotation results</v-btn>
+      </v-col>
+    </v-row>
   </v-sheet>
 </template>
 
 <script>
+import Axios from "axios"
 import CommonHelpMessage from "../sub/commonHelpMessage";
 export default {
   name: "subOverviewDiseaseOverview",
@@ -140,6 +155,25 @@ export default {
         "text-body-1"
       ]
     }
+  },
+  methods:{
+    downloadData(){
+      Axios.post(
+        "/ccas/api/download_sqlite3",
+        {},
+        {
+          params:{
+            jobid:this.route.params.jobid
+          }
+        }
+      ).then(()=>{
+
+
+      })
+    },
+    downloadEvt(url) {
+  window.location.href = url;
+  }
   }
 
 }

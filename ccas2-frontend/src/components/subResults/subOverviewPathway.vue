@@ -165,10 +165,10 @@
 
                                   <v-list-item-subtitle >
                                     Detected levels: &nbsp;
-                                    <v-chip color="teal lighten-2" label outlined>SNV/Indels: {{item.snvindel ? "Yes":"No"}} </v-chip>
-                                    <v-chip color="teal lighten-2" label outlined>Expression: {{item.exp ? "Yes":"No"}} </v-chip>
-                                    <v-chip color="teal lighten-2" label outlined>CNV: {{item.cnv ? "Yes":"No"}} </v-chip>
-                                    <v-chip color="teal lighten-2" label outlined>Methylation: {{item.meth ? "Yes":"No"}} </v-chip>
+                                    <v-chip color="teal lighten-2" v-show="item.snvindel " label outlined>SNV/Indels</v-chip>
+                                    <v-chip color="teal lighten-2"  v-show="item.exp " label outlined>Expression  </v-chip>
+                                    <v-chip color="teal lighten-2" v-show="item.cnv " label outlined>CNV </v-chip>
+                                    <v-chip color="teal lighten-2"  v-show="item.meth " label outlined>Methylation </v-chip>
 
                                   </v-list-item-subtitle>
                                 </v-list-item-content>
