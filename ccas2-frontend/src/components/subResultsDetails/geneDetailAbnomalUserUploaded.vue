@@ -518,35 +518,35 @@
       <v-spacer></v-spacer>
       <v-col class="text-right font-weight-bold teal--text text--lighten-2 text-end" cols="12">Data from
         <v-btn
-          color="teal lighten-3" dark elevation="0" href="https://reactome.org/" small style="text-transform: none"
+          color="teal lighten-3" dark elevation="0" href="https://www.ensembl.org/index.html" small style="text-transform: none"
           target="_blank"> Variant Effect Predictor
         </v-btn>
         <v-btn
-          color="teal lighten-3" dark elevation="0" href="https://reactome.org/" small style="text-transform: none"
+          color="teal lighten-3" dark elevation="0" href="https://annovar.openbioinformatics.org/en/latest/" small style="text-transform: none"
           target="_blank"> ANNOVAR
         </v-btn>
         <v-btn
-          color="teal lighten-3" dark elevation="0" href="https://reactome.org/" small style="text-transform: none"
+          color="teal lighten-3" dark elevation="0" href="https://www.cancerhotspots.org/#/home" small style="text-transform: none"
           target="_blank"> Cancer Hotspot V2
         </v-btn>
+<!--        <v-btn-->
+<!--          color="teal lighten-3" dark elevation="0" href="https://reactome.org/" small style="text-transform: none"-->
+<!--          target="_blank"> DoCM-->
+<!--        </v-btn>-->
         <v-btn
-          color="teal lighten-3" dark elevation="0" href="https://reactome.org/" small style="text-transform: none"
-          target="_blank"> DoCM
-        </v-btn>
-        <v-btn
-          color="teal lighten-3" dark elevation="0" href="https://reactome.org/" small style="text-transform: none"
+          color="teal lighten-3" dark elevation="0" href="https://www.cancergenomeinterpreter.org/" small style="text-transform: none"
           target="_blank"> Cancer Genome Interpreter
         </v-btn>
         <v-btn
-          color="teal lighten-3" dark elevation="0" href="https://reactome.org/" small style="text-transform: none"
+          color="teal lighten-3" dark elevation="0" href="https://www.genome.gov/27528684/1000-genomes-project" small style="text-transform: none"
           target="_blank"> 1000 Genome Project
         </v-btn>
         <v-btn
-          color="teal lighten-3" dark elevation="0" href="https://reactome.org/" small style="text-transform: none"
+          color="teal lighten-3" dark elevation="0" href="https://gnomad.broadinstitute.org/" small style="text-transform: none"
           target="_blank"> gnomAD
         </v-btn>
         <v-btn
-          color="teal lighten-3" dark elevation="0" href="https://reactome.org/" small style="text-transform: none"
+          color="teal lighten-3" dark elevation="0" href="https://gnomad.broadinstitute.org/" small style="text-transform: none"
           target="_blank"> ExAC
         </v-btn>
       </v-col>

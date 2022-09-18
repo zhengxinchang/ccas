@@ -114,7 +114,7 @@
                     <v-col cols="6">
                       <v-row>
                         <v-col cols="12">
-                          <v-sheet class="font-weight-bold">Eligbility Criteria</v-sheet>
+                          <v-sheet class="font-weight-bold">Eligibility Criteria</v-sheet>
 
                         </v-col>
                         <v-col cols="12">

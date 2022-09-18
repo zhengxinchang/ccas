@@ -10,6 +10,19 @@
               <v-breadcrumbs
                 :items="[{text:'home',disabled:false,to:'/home'},{text:'check results',disabled:false,to:'/checkresults'},{text:'results',disabled:true}]"></v-breadcrumbs>
             </v-col>
+            <v-spacer></v-spacer>
+            <v-col cols="2">
+              <v-btn
+                color="teal"
+                dark
+                elevation="0"
+                rounded
+                small
+                style="text-text-replace: none;"
+                @click="downloadEvt('http://ngdc.cncb.ac.cn/ccas/api/download_sqlite3?jobid='+$route.params.jobid)"
+              >Download annotation results
+              </v-btn>
+            </v-col>
           </v-row>
 
         </v-sheet>
@@ -50,7 +63,9 @@
                 <v-icon left>
                   mdi-label-multiple
                 </v-icon>
-                ssGSEA
+                ssGSEA <common-help-message>
+                Please note that this analysis requires all gene expression values. If you use this analysis, please do not filter the data in Expression level.
+              </common-help-message>
               </v-tab>
               <v-tab style="text-transform: none">
                 <v-icon left>
@@ -126,6 +141,37 @@
               </v-toolbar-title>
             </v-toolbar>
             <v-sheet class="pa-3" rounded>
+              <v-sheet class="pt-6  px-3 pb-6 text-left ">
+                <v-btn color="teal"  style="text-transform: none" @click="showTipFilter= !showTipFilter"  outlined small>
+                  <v-icon> &nbsp; mdi-lightbulb-question</v-icon>
+                  How to find key functional genes
+                </v-btn>
+              </v-sheet>
+              <v-sheet v-show="showTipFilter" class="pt-6 mx-9 px-6 pb-6 text-left " color="grey lighten-4">
+
+
+                <div>
+
+                  <div>CCAS provides a two-step process to help users find key functional genes:
+                  </div>
+                  <div>
+                    <strong>Firstly</strong>, there are two types of filter. The basic filters can filter genes by gene
+                    symbols, gene names, Ensembl gene IDs and locus types. Advanced filters can be applied to specific
+                    data types (SNV/Indels, expression, CNV and methylation). Those filters can be used to screen
+                    significant functionally changed genes in this patient.
+
+                  </div>
+                  <div>
+                    <strong>Secondly</strong> , essential genes in tumorigenesis are screened by examining information
+                    in associated literature, drug interactions, pathways, and cancer cohorts in the “gene detail” page.
+                  </div>
+
+                  <div>
+                    <strong>Case study</strong> can be found in our manuscript.
+                  </div>
+                </div>
+
+              </v-sheet>
               <v-sheet class="pt-6  px-3 pb-6">
                 <!--                下边是筛选-->
                 <!--                filter-panel是控制折叠的panel。里边slot是具体筛选的逻辑-->
@@ -228,23 +274,47 @@
                               </v-expansion-panel-header>
                               <v-expansion-panel-content color="grey lighten-4">
                                 <!--                    HIGH IMPACT-->
+
+
                                 <v-row align="center" dense>
-                                  <v-col cols="2" offset="1">
+                                  <v-col cols="10" >
+                                      <v-sheet outlined color="grey lighten-4" class="text-left">
+                                        The IMPACT and Consequence of variants depend on annotation results from the Ensembl-VEP tool. Detailed description can be found
+                                        <a style="text-decoration: none" target="_blank" href="http://grch37.ensembl.org/info/genome/variation/prediction/predicted_data.html#consequences">here </a>.
+<!--                                        The variant with higher IMPACT may have a greater impact on the function of the protein. CCAS suggests (but does not force) users to study the SNV/Indels level data start from the variants with the HIGH IMPACT value.-->
+                                      </v-sheet>
+                                  </v-col>
+                                </v-row>
+
+                                <v-row align="center" dense>
+                                  <v-col cols="3" offset="1">
                                     <v-sheet color="grey lighten-4  font-weight-bold">
 
                                       <v-checkbox
                                         v-model="dat.tablePage1.SNVsubFilter.impact.HIGH.mark"
                                         :disabled="!dat.tablePage1.FilterSNV "
                                         color="teal"
-                                        label="HIGH IMPACT"
-                                      ></v-checkbox>
+                                        hide-details
+                                      >
+                                        <template #label>
+
+                                          HIGH IMPACT
+                                          <common-help-message>
+                                            Enabling filters on variants with high impact.
+
+                                          </common-help-message>
+                                        </template>
+
+
+                                      </v-checkbox>
                                     </v-sheet>
                                   </v-col>
                                   <v-col cols="10" offset="2">
                                     <v-row dense>
-                                      <v-col v-for="item in Object.keys(dat.tablePage1.SNVsubFilter.impact.HIGH.consequence) "
-                                             :key="item"
-                                             cols="4"
+                                      <v-col
+                                        v-for="item in Object.keys(dat.tablePage1.SNVsubFilter.impact.HIGH.consequence) "
+                                        :key="item"
+                                        cols="4"
                                       >
                                         <v-checkbox
                                           v-model="dat.tablePage1.SNVsubFilter.impact.HIGH.consequence[item].value"
@@ -252,6 +322,7 @@
                                           :label="`${item.replace('consequence_','')}`"
                                           color="teal"
                                           dense
+                                          hide-details
                                         ></v-checkbox>
                                       </v-col>
                                     </v-row>
@@ -259,22 +330,36 @@
                                 </v-row>
                                 <!--                    MODERATE-->
                                 <v-row align="center" dense>
-                                  <v-col cols="2" offset="1">
+                                  <v-col cols="3" offset="1">
                                     <v-sheet color="grey lighten-4  font-weight-bold">
 
                                       <v-checkbox
                                         v-model="dat.tablePage1.SNVsubFilter.impact.MODERATE.mark"
                                         :disabled="!dat.tablePage1.FilterSNV "
                                         color="teal"
-                                        label="MODERATE IMPACT"
-                                      ></v-checkbox>
+                                        hide-details
+                                      >
+
+
+                                        <template #label>
+
+                                          MODERATE IMPACT
+                                          <common-help-message>
+                                            Enabling filters on variants with moderate impact.
+
+                                          </common-help-message>
+                                        </template>
+
+
+                                      </v-checkbox>
                                     </v-sheet>
                                   </v-col>
                                   <v-col cols="10" offset="2">
                                     <v-row dense>
-                                      <v-col v-for="item in Object.keys(dat.tablePage1.SNVsubFilter.impact.MODERATE.consequence) "
-                                             :key="item"
-                                             cols="4"
+                                      <v-col
+                                        v-for="item in Object.keys(dat.tablePage1.SNVsubFilter.impact.MODERATE.consequence) "
+                                        :key="item"
+                                        cols="4"
                                       >
                                         <v-checkbox
                                           v-model="dat.tablePage1.SNVsubFilter.impact.MODERATE.consequence[item].value"
@@ -282,6 +367,7 @@
                                           :label="`${item.replace('consequence_','')}`"
                                           color="teal"
                                           dense
+                                          hide-details
                                         ></v-checkbox>
                                       </v-col>
                                     </v-row>
@@ -289,7 +375,7 @@
                                 </v-row>
                                 <!--                    LOW-->
                                 <v-row align="center" dense>
-                                  <v-col cols="2" offset="1">
+                                  <v-col cols="3" offset="1">
                                     <v-sheet color="grey lighten-4  font-weight-bold">
 
                                       <v-checkbox
@@ -297,19 +383,31 @@
                                         :disabled="!dat.tablePage1.FilterSNV "
                                         color="teal"
                                         dense
-                                        label="LOW IMPACT"
-                                      ></v-checkbox>
+                                        hide-details
+                                      >
+                                        <template #label>
+
+                                          LOW IMPACT
+                                          <common-help-message>
+                                            Enabling filters on variants with low impact.
+
+                                          </common-help-message>
+                                        </template>
+
+
+                                      </v-checkbox>
                                     </v-sheet>
                                   </v-col>
                                   <v-col cols="10" offset="2">
                                     <v-row dense>
-                                      <v-col v-for="item in Object.keys(dat.tablePage1.SNVsubFilter.impact.LOW.consequence) "
-                                             :key="item"
-                                             cols="4"
+                                      <v-col
+                                        v-for="item in Object.keys(dat.tablePage1.SNVsubFilter.impact.LOW.consequence) "
+                                        :key="item"
+                                        cols="4"
                                       >
                                         <v-checkbox
                                           v-model="dat.tablePage1.SNVsubFilter.impact.LOW.consequence[item].value"
-
+                                          hide-details
                                           :disabled="!dat.tablePage1.FilterSNV "
                                           :label="`${item.replace('consequence_','')}`"
                                           color="teal"
@@ -321,28 +419,43 @@
                                 </v-row>
                                 <!--                    MODIFIER-->
                                 <v-row align="center" dense>
-                                  <v-col cols="2" offset="1">
+                                  <v-col cols="3" offset="1">
                                     <v-sheet color="grey lighten-4  font-weight-bold">
 
                                       <v-checkbox
                                         v-model="dat.tablePage1.SNVsubFilter.impact.MODIFIER.mark"
                                         :disabled="!dat.tablePage1.FilterSNV "
                                         color="teal"
-                                        label="MODIFIER IMPACT"
-                                      ></v-checkbox>
+                                        hide-details
+                                      >
+
+
+                                        <template #label>
+
+                                          MODIFIER IMPACT
+                                          <common-help-message>
+                                            Enabling filters on variants with modifier impact.
+
+                                          </common-help-message>
+                                        </template>
+
+
+                                      </v-checkbox>
                                     </v-sheet>
                                   </v-col>
                                   <v-col cols="10" offset="2">
                                     <v-row dense>
-                                      <v-col v-for="item in Object.keys(dat.tablePage1.SNVsubFilter.impact.MODIFIER.consequence) "
-                                             :key="item"
-                                             cols="4"
+                                      <v-col
+                                        v-for="item in Object.keys(dat.tablePage1.SNVsubFilter.impact.MODIFIER.consequence) "
+                                        :key="item"
+                                        cols="4"
                                       >
                                         <v-checkbox
                                           v-model="dat.tablePage1.SNVsubFilter.impact.MODIFIER.consequence[item].value"
                                           :disabled="!dat.tablePage1.FilterSNV "
                                           :label="`${item.replace('consequence_','')}`"
                                           color="teal"
+                                          hide-details
                                         ></v-checkbox>
                                       </v-col>
                                     </v-row>
@@ -378,8 +491,8 @@
                               class="align-center"
                               color="teal"
                               dark
-                              step="0.05"
                               hide-details
+                              step="0.05"
                               thumb-color="teal lighten-1"
                               thumb-label
                             >
@@ -410,9 +523,9 @@
                               color="teal"
                               dark
                               hide-details
+                              step="0.05"
                               thumb-color="teal lighten-1"
                               thumb-label
-                              step="0.05"
                             >
                             </v-range-slider>
                           </v-sheet>
@@ -421,7 +534,8 @@
                       </v-row>
                       <v-row class="mx-3 pt-3">
                         <v-col class="text-left">
-                          <v-switch v-model="dat.tablePage1.FilterMETH" class="font-weight-bold float-start" color="teal"
+                          <v-switch v-model="dat.tablePage1.FilterMETH" class="font-weight-bold float-start"
+                                    color="teal"
                                     inset
                                     label="Filter data at Methylation level"></v-switch>
                           <common-help-message class="float-left">When this button is turned on, all genes with
@@ -442,9 +556,9 @@
                               class="align-center"
                               color="teal"
 
-                              step="0.05"
                               dark
                               hide-details
+                              step="0.05"
                               thumb-color="teal lighten-1"
                               thumb-label
                             >
@@ -469,6 +583,16 @@
               </v-sheet>
 
               <vxe-toolbar ref="xToolbar1" custom export print></vxe-toolbar>
+              <vxe-pager
+                :current-page="dat.tablePage1.currentPage"
+                :layouts="['PrevPage', 'JumpNumber', 'NextPage', 'FullJump', 'Sizes', 'Total']"
+                :loading="dat.tableloading1"
+                :page-size="dat.tablePage1.pageSize"
+                :total="dat.tablePage1.totalPage"
+                @page-change="handlePageChange"
+              >
+              </vxe-pager>
+
               <vxe-table
                 ref="xTable1"
                 :align="dat.allAlign"
@@ -480,6 +604,7 @@
                 :sort-config="{remote:true,trigger:'cell'}"
                 border
                 empty-text="Empty"
+                max-height="600"
                 round
                 stripe
                 @sort-change="customSortMethod"
@@ -495,15 +620,11 @@
                   </common-help-message></span>
                   </template>
                   <template #default="{row}">
-
                     <a class="font-weight-bold" style="text-decoration: none;color: #008080"
                        @click="$router.push({name:'genedetail',params:{jobid:$route.params.jobid,geneid:row.geneid}})">
-
                       {{ row.geneid }}
                     </a>
-
                   </template>
-
                 </vxe-column>
                 <vxe-column field="genefamily" sortable title="Gene Family"></vxe-column>
                 <vxe-column field="location" sortable title="Location"></vxe-column>
@@ -561,7 +682,8 @@
                   </template>
                 </vxe-column>
 
-                <vxe-column align="center" field="numofcancer" sortable title="#Cancer cohorts have variants in this gene">
+                <vxe-column align="center" field="numofcancer" sortable
+                            title="#Cancer cohorts have variants in this gene">
                   <template #header="{column}">
                     <span>{{ column.title }}</span><span><common-help-message>
                     Number of cancer cohorts that have variants in this gene.
@@ -609,9 +731,6 @@
                     </v-btn>
                   </template>
                 </vxe-column>
-                <!--                @click="$router.push({name:'/annoresults/genedetail',params:{jobid:$route.params.jobid,geneid:row.geneid}})"-->
-
-
               </vxe-table>
               <vxe-pager
                 :current-page="dat.tablePage1.currentPage"
@@ -654,10 +773,12 @@ export default {
   },
   data() {
     return {
+      showTipFilter:true,
       dat: {
         overview: {
           diseaseOverview: null,
         },
+
         expandAdvanceFilter: false,
         allAlign: null,
         tableData: [],
@@ -735,44 +856,6 @@ export default {
                 }
               }
             },
-            // consequence:{
-            //   consequence_transcript_ablation:true,
-            //   consequence_splice_acceptor_variant:true,
-            //   consequence_splice_donor_variant:true,
-            //   consequence_stop_gained:true,
-            //   consequence_frameshift_variant:true,
-            //   consequence_stop_lost:true,
-            //   consequence_start_lost:true,
-            //   consequence_transcript_amplification:true,
-            //   consequence_inframe_insertion:true,
-            //   consequence_inframe_deletion:true,
-            //   consequence_missense_variant:true,
-            //   consequence_protein_altering_variant:true,
-            //   consequence_splice_region_variant:true,
-            //   consequence_incomplete_terminal_codon_variant:true,
-            //   consequence_start_retained_variant:true,
-            //   consequence_stop_retained_variant:true,
-            //   consequence_synonymous_variant:true,
-            //   consequence_coding_sequence_variant:true,
-            //   consequence_mature_miRNA_variant:true,
-            //   consequence_5_prime_UTR_variant:true,
-            //   consequence_3_prime_UTR_variant:true,
-            //   consequence_non_coding_transcript_exon_variant:true,
-            //   consequence_intron_variant:true,
-            //   consequence_NMD_transcript_variant:true,
-            //   consequence_non_coding_transcript_variant:true,
-            //   consequence_upstream_gene_variant:true,
-            //   consequence_downstream_gene_variant:true,
-            //   consequence_TFBS_ablation:true,
-            //   consequence_TFBS_amplification:true,
-            //   consequence_TF_binding_site_variant:true,
-            //   consequence_regulatory_region_ablation:true,
-            //   consequence_regulatory_region_amplification:true,
-            //   consequence_feature_elongation:true,
-            //   consequence_regulatory_region_variant:true,
-            //   consequence_feature_truncation:true,
-            //   consequence_intergenic_variant:true,
-            // }
           },
 
           ExpsubFilter: {
@@ -1017,6 +1100,10 @@ export default {
       this.dat.tablePage1.pageSize = pageSize
       this.loadDataByPage()
     },
+
+    downloadEvt(url) {
+      window.location.href = url;
+    },
     loadDataByPage() {
       this.dat.tableloading1 = true
       Axios.post(
@@ -1062,20 +1149,6 @@ export default {
         this.dat.tablePage1.MethsubFilter.setmax = res.data.MaxMin.max_meth_value
         this.dat.tablePage1.MethsubFilter.setmin = res.data.MaxMin.min_meth_value
 
-        // this.dat.tablePage1.ExpsubFilter.range = [
-        //   res.data.MaxMin.max_exp_value,
-        //   res.data.MaxMin.min_exp_value
-        // ]
-        //
-        // this.dat.tablePage1.CNVsubFilter.range = [
-        //   res.data.MaxMin.max_cnv_value,
-        //   res.data.MaxMin.min_cnv_value
-        // ]
-        //
-        // this.dat.tablePage1.MethsubFilter.range = [
-        //   res.data.MaxMin.max_meth_value,
-        //   res.data.MaxMin.min_meth_value
-        // ]
 
         this.dat.tableloading1 = false
       })

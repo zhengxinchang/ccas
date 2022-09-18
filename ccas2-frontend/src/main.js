@@ -37,7 +37,12 @@ if(process.env.NODE_ENV == "production"){
 }else{
   window.baseURL=""
 }
-
+Vue.directive('title',{
+  inserted: function(el){
+    document.title = el.getAttribute('title')
+    // console.log(el)
+  }
+})
 
 /* eslint-disable no-new */
 new Vue({

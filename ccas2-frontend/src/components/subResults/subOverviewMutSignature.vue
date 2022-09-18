@@ -206,6 +206,15 @@ export default {
 
       let that = this
       option = {
+
+        toolbox: {
+          feature: {
+            saveAsImage:{
+             title:"save",
+              name: this.jobid + "_MutationSignaturesCompareToCOSMIC"
+            }
+          }
+          },
         legend: {
           data: ['Punch Card'],
           // x:"right"
@@ -315,9 +324,16 @@ export default {
         return [item[1], item[0], item[2]];
       });
 
-      // console.log(data);
 
       optionMutPattern = {
+        toolbox: {
+          feature: {
+            saveAsImage:{
+              title:"save",
+              name: this.jobid + "_MutationSignaturePattern"
+            }
+          }
+        },
         tooltip: {
           trigger: 'item',
 

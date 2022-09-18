@@ -77,6 +77,13 @@
 
             <v-spacer></v-spacer>
           </v-row>
+          <v-row>
+            <v-col cols="10" offset="1">
+              <div class="z-transparent white--text" style="color: white"> Recommended browsers: Chrome, MicroSoft
+                Edge.
+              </div>
+            </v-col>
+          </v-row>
         </v-sheet>
 
 
@@ -89,7 +96,12 @@
                 <v-spacer>
                 </v-spacer>
                 <v-col cols='12' lg="6" md="8" sm="12">
-                  <div class="text-h4 teal--text darken-4 my-6"> Start your annotation!</div>
+                  <div class="text-h4 teal--text darken-4 my-6"> Start your annotation!
+                    <common-help-message>Mandatory inputs for CCAS include cancer subtypes and SNV variation data. Other
+                      omics data are optional. After filling in all required data and optional data, click Start to run
+                      the annotation process.
+                    </common-help-message>
+                  </div>
                 </v-col>
                 <v-spacer>
                 </v-spacer>
@@ -105,24 +117,14 @@
                 <v-spacer></v-spacer>
               </v-row>
               <v-progress-circular
-                v-show="doid_list == null"
-                class="float-start mt-2 ml-2"
-                color="white"
-                indeterminate
+                  v-show="doid_list == null"
+                  class="float-start mt-2 ml-2"
+                  color="white"
+                  indeterminate
 
               ></v-progress-circular>
               <v-row class="py-4">
                 <v-col cols="12" lg="7" md="12" sm="12" xl="7">
-                  <!--                  <v-row>-->
-                  <!--                    <v-col cols="12">-->
-                  <!--                      <v-sheet class="teal&#45;&#45;text text-h5"> Step-->
-                  <!--                        <v-icon>mdi-numeric-1-circle</v-icon>-->
-                  <!--                        : Choose cancer type-->
-                  <!--                      </v-sheet>-->
-                  <!--                    </v-col>-->
-                  <!--                  </v-row>-->
-
-
                   <v-row>
                     <v-col class=" text-start " cols="10" offset="1">
                       <v-row>
@@ -130,17 +132,17 @@
                           <v-row class="mynarrowline">
                             <v-col cols="2" offset="1">
                               <v-switch
-                                v-model="showJobTitle"
-                                color="teal"
-                                hide-details
+                                  v-model="showJobTitle"
+                                  color="teal"
+                                  hide-details
                               ></v-switch>
                             </v-col>
                             <v-col cols="9">
                               <v-text-field
-                                v-model="upload_data_jobtitle"
-                                :disabled="!showJobTitle"
-                                clearable
-                                label="Job title"
+                                  v-model="upload_data_jobtitle"
+                                  :disabled="!showJobTitle"
+                                  clearable
+                                  label="Job title"
                               ></v-text-field>
                             </v-col>
                           </v-row>
@@ -149,25 +151,24 @@
                           <v-row class="mynarrowline">
                             <v-col cols="2" offset="1">
                               <v-switch
-                                v-model="showEmail"
-                                color="teal"
-                                hide-details
+                                  v-model="showEmail"
+                                  color="teal"
+                                  hide-details
 
                               ></v-switch>
                             </v-col>
                             <v-col cols="9">
                               <v-text-field
-                                v-model="upload_data_email"
-                                :disabled="!showEmail"
-                                :rules="[rules.email]"
-                                clearable
-                                label="Email"
+                                  v-model="upload_data_email"
+                                  :disabled="!showEmail"
+                                  :rules="[rules.email]"
+                                  clearable
+                                  label="Email"
                               ></v-text-field>
                             </v-col>
                           </v-row>
                         </v-col>
                       </v-row>
-
 
                     </v-col>
                   </v-row>
@@ -182,11 +183,11 @@
                     <v-spacer></v-spacer>
                     <v-col cols="10">
                       <v-autocomplete
-                        v-model="upload_data_cancertype"
-                        :items="doid_dict2list || []"
-                        clearable
-                        dense
-                        outlined
+                          v-model="upload_data_cancertype"
+                          :items="doid_dict2list || []"
+                          clearable
+                          dense
+                          outlined
                       >
                       </v-autocomplete>
                       <!--                  :rules="[rules.required]"-->
@@ -204,47 +205,47 @@
                     <v-spacer></v-spacer>
                     <v-col cols="12" lg="2" md="2" sm="12" xl="2">
                       <common-doid-group
-                        :dat=" ( doid_list && doid_list['Blood'] && doid_list['Blood'].children || [])"
-                        :image_url="require('../assets/img/organs/blood.png')"
-                        :imgsize="plot_canvas_styles.imgsize"
-                        group-name="Blood"
+                          :dat=" ( doid_list && doid_list['Blood'] && doid_list['Blood'].children || [])"
+                          :image_url="require('../assets/img/organs/blood.png')"
+                          :imgsize="plot_canvas_styles.imgsize"
+                          group-name="Blood"
                       ></common-doid-group>
                       <div class="teal--text text-body-1">Blood</div>
                     </v-col>
                     <v-col cols="12" lg="2" md="2" sm="12" xl="2">
                       <common-doid-group
-                        :dat=" doid_list && doid_list['Bone'] && doid_list['Bone'].children || []"
-                        :image_url="require('../assets/img/organs/bone.png')"
-                        :imgsize="plot_canvas_styles.imgsize"
-                        group-name="Bone"
+                          :dat=" doid_list && doid_list['Bone'] && doid_list['Bone'].children || []"
+                          :image_url="require('../assets/img/organs/bone.png')"
+                          :imgsize="plot_canvas_styles.imgsize"
+                          group-name="Bone"
                       ></common-doid-group>
                       <div class="teal--text text-body-1">Bone</div>
                     </v-col>
                     <v-col cols="12" lg="2" md="2" sm="12" xl="2">
                       <common-doid-group
-                        :dat="doid_list && doid_list['Gland'] && doid_list['Gland'].children || []"
-                        :image_url="require('../assets/img/organs/gland.png')"
-                        :imgsize="plot_canvas_styles.imgsize"
-                        group-name="Glands"
+                          :dat="doid_list && doid_list['Gland'] && doid_list['Gland'].children || []"
+                          :image_url="require('../assets/img/organs/gland.png')"
+                          :imgsize="plot_canvas_styles.imgsize"
+                          group-name="Glands"
                       ></common-doid-group>
                       <div class="teal--text text-body-1">Glands</div>
                     </v-col>
                     <v-col cols="12" lg="2" md="2" sm="12" xl="2">
                       <common-doid-group
-                        :dat=" doid_list && doid_list['Skin'] && doid_list['Skin'].children || []"
-                        :image_url="require('../assets/img/organs/skin.png')"
-                        :imgsize="plot_canvas_styles.imgsize"
-                        group-name="Skin"
+                          :dat=" doid_list && doid_list['Skin'] && doid_list['Skin'].children || []"
+                          :image_url="require('../assets/img/organs/skin.png')"
+                          :imgsize="plot_canvas_styles.imgsize"
+                          group-name="Skin"
                       ></common-doid-group>
                       <div class="teal--text text-body-1">Skin</div>
                     </v-col>
 
                     <v-col cols="12" lg="2" md="2" sm="12" xl="2">
                       <common-doid-group
-                        :dat=" doid_list && doid_list['Head And Neck Regions'] && doid_list['Head And Neck Regions'].children || []"
-                        :image_url="require('../assets/img/organs/head_neck.png')"
-                        :imgsize="plot_canvas_styles.imgsize"
-                        group-name="Head and neck"
+                          :dat=" doid_list && doid_list['Head And Neck Regions'] && doid_list['Head And Neck Regions'].children || []"
+                          :image_url="require('../assets/img/organs/head_neck.png')"
+                          :imgsize="plot_canvas_styles.imgsize"
+                          group-name="Head and neck"
                       ></common-doid-group>
                       <div class="teal--text text-body-1">Head and neck</div>
                     </v-col>
@@ -256,49 +257,49 @@
 
                     <v-col cols="12" lg="2" md="2" sm="12" xl="2">
                       <common-doid-group
-                        :dat=" doid_list && doid_list['Reproductive Organs'] && doid_list['Reproductive Organs'].children || []"
+                          :dat=" doid_list && doid_list['Reproductive Organs'] && doid_list['Reproductive Organs'].children || []"
 
-                        :image_url="require('../assets/img/organs/reproductive_organ.png')"
-                        :imgsize="plot_canvas_styles.imgsize"
-                        group-name="Reproductive system"
+                          :image_url="require('../assets/img/organs/reproductive_organ.png')"
+                          :imgsize="plot_canvas_styles.imgsize"
+                          group-name="Reproductive system"
                       ></common-doid-group>
                       <div class="teal--text text-body-1">Reproductive system</div>
                     </v-col>
                     <v-col cols="12" lg="2" md="2" sm="12" xl="2">
                       <common-doid-group
-                        :dat=" doid_list && doid_list['Thoracic Organs'] && doid_list['Thoracic Organs'].children || []"
-                        :image_url="require('../assets/img/organs/Thoracic_organs.png')"
-                        :imgsize="plot_canvas_styles.imgsize"
-                        group-name="Thoracic organs"
+                          :dat=" doid_list && doid_list['Thoracic Organs'] && doid_list['Thoracic Organs'].children || []"
+                          :image_url="require('../assets/img/organs/Thoracic_organs.png')"
+                          :imgsize="plot_canvas_styles.imgsize"
+                          group-name="Thoracic organs"
                       ></common-doid-group>
                       <div class="teal--text text-body-1">Thoracic organs</div>
                     </v-col>
                     <v-col cols="12" lg="2" md="2" sm="12" xl="2">
                       <common-doid-group
-                        :dat=" doid_list && doid_list['Urinary Organs'] && doid_list['Urinary Organs'].children || []"
+                          :dat=" doid_list && doid_list['Urinary Organs'] && doid_list['Urinary Organs'].children || []"
 
-                        :image_url="require('../assets/img/organs/urinary_organs.png')"
-                        :imgsize="plot_canvas_styles.imgsize"
-                        group-name="Urinary system"
+                          :image_url="require('../assets/img/organs/urinary_organs.png')"
+                          :imgsize="plot_canvas_styles.imgsize"
+                          group-name="Urinary system"
                       ></common-doid-group>
                       <div class="teal--text text-body-1">Urinary system</div>
                     </v-col>
                     <v-col cols="12" lg="2" md="2" sm="12" xl="2">
                       <common-doid-group
-                        :dat=" doid_list && doid_list['Abdominal Organs'] && doid_list['Abdominal Organs'].children || []"
-                        :image_url="require('../assets/img/organs/Abdominal_organs.png')"
-                        :imgsize="plot_canvas_styles.imgsize"
-                        group-name="Abdominal organs"
+                          :dat=" doid_list && doid_list['Abdominal Organs'] && doid_list['Abdominal Organs'].children || []"
+                          :image_url="require('../assets/img/organs/Abdominal_organs.png')"
+                          :imgsize="plot_canvas_styles.imgsize"
+                          group-name="Abdominal organs"
                       ></common-doid-group>
                       <!--                    :image_url='baseurl+"/static/img/organs/Abdominal_organs.png"'-->
                       <div class="teal--text text-body-1">Abdminal organs</div>
                     </v-col>
                     <v-col cols="12" lg="2" md="2" sm="12" xl="2">
                       <common-doid-group
-                        :dat=" doid_list && doid_list['Other'] && doid_list['Other'].children || []"
-                        :image_url="require('../assets/img/organs/other.png')"
-                        :imgsize="plot_canvas_styles.imgsize"
-                        group-name="Others"
+                          :dat=" doid_list && doid_list['Other'] && doid_list['Other'].children || []"
+                          :image_url="require('../assets/img/organs/other.png')"
+                          :imgsize="plot_canvas_styles.imgsize"
+                          group-name="Others"
                       ></common-doid-group>
                       <div class="teal--text text-body-1">Others</div>
                     </v-col>
@@ -307,39 +308,17 @@
                 </v-col>
                 <v-divider vertical></v-divider>
                 <v-col cols="12" lg="5" md="12" sm="12" xl="5">
-                  <!--                  <v-row>-->
-                  <!--                    <v-col cols="12">-->
-                  <!--                      <v-sheet class="teal&#45;&#45;text text-h5"> Step-->
-                  <!--                        <v-icon>mdi-numeric-2-circle</v-icon>-->
-                  <!--                        : Run annotation-->
-                  <!--                      </v-sheet>-->
-                  <!--                    </v-col>-->
-                  <!--                  </v-row>-->
-
-                  <!--                  <v-row class="mynarrowline">-->
-                  <!--                    <v-col class="mb-8" cols="10" offset="1">-->
-                  <!--                      <v-sheet class="text-start">-->
-                  <!--                        <v-sheet class="teal&#45;&#45;text text-body-1">Selected cancer type :</v-sheet>-->
-                  <!--                        <v-sheet class="my-3 teal&#45;&#45;text darken-4 text-h5">-->
-                  <!--                          <v-chip v-if="upload_data_cancertype !=null" class="mt-8 mx-auto" close color="teal lighten-1"-->
-                  <!--                                  dark outlined small @click:close="()=>{upload_data_cancertype=null}">-->
-                  <!--                            <v-icon>mdi-account-alert</v-icon> &nbsp; {{ upload_data_cancertype }}-->
-                  <!--                          </v-chip>-->
-                  <!--                        </v-sheet>-->
-                  <!--                      </v-sheet>-->
-                  <!--                    </v-col>-->
-                  <!--                  </v-row>-->
 
                   <v-sheet>
                     <v-row class="mynarrowline">
                       <v-col cols="10" offset="1">
                         <v-sheet>
                           <v-select
-                            v-model="upload_data_refversion"
-                            :items="refversion"
-                            :rules="[rules.required]"
-                            label="Select reference version"
-                            prepend-icon="mdi-vanish"
+                              v-model="upload_data_refversion"
+                              :items="refversion"
+                              :rules="[rules.required]"
+                              label="Select reference version"
+                              prepend-icon="mdi-vanish"
                           >
                           </v-select>
                         </v-sheet>
@@ -351,10 +330,10 @@
                         <v-row align="center">
                           <v-col cols="4">
                             <v-select
-                              v-model="upload_data_file_type"
-                              :items="fileTypes.snvindels"
-                              :rules="[rules.required]"
-                              label="Select snv/indels file type"
+                                v-model="upload_data_file_type"
+                                :items="fileTypes.snvindels"
+                                :rules="[rules.required]"
+                                label="Select snv/indels file type"
 
                             >
                               <template #prepend>
@@ -365,17 +344,17 @@
                           </v-col>
                           <v-col cols="6">
                             <v-file-input
-                              v-model="upload_data_file"
-                              :rules="[rules.required]"
-                              label="Upload snv/indels file"
-                              prepend-icon=""
+                                v-model="upload_data_file"
+                                :rules="[rules.required]"
+                                label="Upload snv/indels file"
+                                prepend-icon=""
                             >
 
 
                             </v-file-input>
                           </v-col>
                           <v-col cols="2">
-                            <v-btn :href="baseurl+'/static/examples/snv.vcf'" class="mdi-18px" color="teal"
+                            <v-btn :href="baseurl+'/static/examples/demo.SNVIndels.vcf'" class="mdi-18px" color="teal"
                                    elevation="0" fab outlined
                                    small target="_blank"
                             >
@@ -391,22 +370,22 @@
                         <v-row align="center">
                           <v-col cols="4">
                             <v-select
-                              v-model="upload_data_exp_file_type"
-                              :items="fileTypes.exp"
-                              clearable
-                              label="Select expression file type"
-                              prepend-icon="mdi-dna"
+                                v-model="upload_data_exp_file_type"
+                                :items="fileTypes.exp"
+                                clearable
+                                label="Select expression file type"
+                                prepend-icon="mdi-dna"
                             ></v-select>
                           </v-col>
                           <v-col cols="6">
                             <v-file-input
-                              v-model="upload_data_exp_file"
-                              label="Upload your expression file"
-                              prepend-icon=""
+                                v-model="upload_data_exp_file"
+                                label="Upload your expression file"
+                                prepend-icon=""
                             ></v-file-input>
                           </v-col>
                           <v-col cols="2">
-                            <v-btn :href="baseurl+'/static/examples/exp.tsv'" class="mdi-18px" color="teal"
+                            <v-btn :href="baseurl+'/static/examples/demo.Exp.gene.txt'" class="mdi-18px" color="teal"
                                    elevation="0" fab outlined
                                    small target="_blank"
                             >
@@ -422,22 +401,22 @@
                         <v-row align="center">
                           <v-col cols="4">
                             <v-select
-                              v-model="upload_data_cnv_file_type"
-                              :items="fileTypes.cnv"
-                              clearable
-                              label="Select CNV file type"
-                              prepend-icon="mdi-dna"
+                                v-model="upload_data_cnv_file_type"
+                                :items="fileTypes.cnv"
+                                clearable
+                                label="Select CNV file type"
+                                prepend-icon="mdi-dna"
                             ></v-select>
                           </v-col>
                           <v-col cols="6">
                             <v-file-input
-                              v-model="upload_data_cnv_file"
-                              label="Upload your CNV file"
-                              prepend-icon=""
+                                v-model="upload_data_cnv_file"
+                                label="Upload your CNV file"
+                                prepend-icon=""
                             ></v-file-input>
                           </v-col>
                           <v-col cols="2">
-                            <v-btn :href="baseurl+'/static/examples/cnv.txt'" class="mdi-18px" color="teal"
+                            <v-btn :href="baseurl+'/static/examples/demo.CNV.region.txt'" class="mdi-18px" color="teal"
                                    elevation="0" fab outlined
                                    small target="_blank"
                             >
@@ -453,22 +432,22 @@
                         <v-row align="center">
                           <v-col cols="4">
                             <v-select
-                              v-model="upload_data_meth_file_type"
-                              :items="fileTypes.meth"
-                              clearable
-                              label="Select methylation file type"
-                              prepend-icon="mdi-dna"
+                                v-model="upload_data_meth_file_type"
+                                :items="fileTypes.meth"
+                                clearable
+                                label="Select methylation file type"
+                                prepend-icon="mdi-dna"
                             ></v-select>
                           </v-col>
                           <v-col cols="6">
                             <v-file-input
-                              v-model="upload_data_meth_file"
-                              label="Upload your methylation file"
-                              prepend-icon=""
+                                v-model="upload_data_meth_file"
+                                label="Upload your methylation file"
+                                prepend-icon=""
                             ></v-file-input>
                           </v-col>
                           <v-col cols="2">
-                            <v-btn :href="baseurl+'/static/examples/meth.tsv'" class="mdi-18px" color="teal"
+                            <v-btn :href="baseurl+'/static/examples/demo.Meth.gene.txt'" class="mdi-18px" color="teal"
                                    elevation="0" fab outlined
                                    small target="_blank"
                             >
@@ -500,7 +479,8 @@
                           CCAS receives multi-omics data as input for multi-dimensional annotation of tumors. In CCAS,
                           SNV/indels level data is necessary. The data at the Expression, CNV, and Methylation levels
                           are optional. The SNV/indels part accepts data in the form of VCF, MAF, or 5 column table. The
-                          Expression, Copy Number Variation (CNV), and Methylation parts receive the genes-value table (Ensembl Gene ID\tValue)
+                          Expression, Copy Number Variation (CNV), and Methylation parts receive the genes-value table
+                          (Ensembl Gene ID\tValue)
                           as inputs. Meanwhile, CNV and Methylation also support region format (Chr\tStart\tEnd\tValue)
                           as input.
                         </v-sheet>
@@ -520,14 +500,14 @@
                 <v-col cols="6" offset="3">
                   <v-row class="mynarrowline">
 
-                    <v-col cols="4" >
+                    <v-col cols="4">
                       <v-btn
-                        :disabled="submitting"
-                        :loading="submitting"
-                        color="red"
-                        outlined
-                        width="100%"
-                        @click="upload2backend($event)"
+                          :disabled="submitting"
+                          :loading="submitting"
+                          color="red"
+                          outlined
+                          width="100%"
+                          @click="upload2backend($event)"
                       >
                         <v-icon>
                           mdi-rocket-outline
@@ -539,12 +519,12 @@
                     <v-col cols="4">
                       <v-btn
 
-                        class="mx-4"
-                        color="teal"
-                        dark
-                        outlined
-                        width="100%"
-                        to="/checkresults"
+                          class="mx-4"
+                          color="teal"
+                          dark
+                          outlined
+                          to="/checkresults"
+                          width="100%"
                       >
                         <v-icon>mdi-chemical-weapon</v-icon>
                         Check Results
@@ -553,12 +533,12 @@
                     <v-col cols="4">
                       <v-btn
 
-                        class="mx-4"
-                        color="teal"
-                        dark
-                        outlined
-                        width="100%"
-                        @click="loadDemo"
+                          class="mx-4"
+                          color="teal"
+                          dark
+                          outlined
+                          width="100%"
+                          @click="loadDemo"
                       >
                         <v-icon>
                           mdi-lifebuoy
@@ -575,9 +555,9 @@
                 <v-spacer></v-spacer>
                 <v-col cols="10">
                   <v-card
-                    v-show="msgshow"
-                    class="px-2 py-4 mt-4"
-                    color="teal lighten-2"
+                      v-show="msgshow"
+                      class="px-2 py-4 mt-4"
+                      color="teal lighten-2"
                   >
                     <v-btn v-show="submitOK" class="float-end mr-1 mt-1 lighten-2" color="teal" dark elevation="0" fab
                            small
@@ -589,9 +569,9 @@
                       <v-icon>mdi-close</v-icon>
                     </v-btn>
                     <v-sheet
-                      color="teal lighten-2"
-                      dark
-                      v-html="response_msg"
+                        color="teal lighten-2"
+                        dark
+                        v-html="response_msg"
                     >
 
                     </v-sheet>
@@ -616,15 +596,15 @@
       <v-col lg="11" md="11" sm="12">
         <v-row>
 
-          <v-col class="pl-0 pr-2" cols="12" lg="4" md="4" sm="12">
+          <v-col class="pl-0 pr-2" cols="12" lg="3" md="3" sm="12">
             <v-sheet class=" pt-6  overflow-y-auto" elevation="4" height="100%" rounded>
               <v-sheet class="teal--text text-h5 my-6 text-start mx-6"> Recent events</v-sheet>
               <v-divider></v-divider>
               <v-list
-                v-for="itm in homeNews"
-                :key="itm.title"
-                class=" text-start overflow-y-auto mb-2"
-                max-height="400"
+                  v-for="itm in homeNews"
+                  :key="itm.title"
+                  class=" text-start overflow-y-auto mb-2"
+                  max-height="400"
               >
                 <v-list-item two-line>
                   <v-list-item-content>
@@ -635,7 +615,7 @@
               </v-list>
             </v-sheet>
           </v-col>
-          <v-col class="px-2" cols="12" lg="4" md="4" sm="12">
+          <v-col class="px-2" cols="12" lg="3" md="3" sm="12">
             <v-sheet class=" pt-6 " elevation="4" height="100%" rounded>
               <v-sheet class="mx-6">
                 <div class="teal--text text-h5 my-6 text-start"> Contact</div>
@@ -658,12 +638,48 @@
               </v-sheet>
             </v-sheet>
           </v-col>
-          <v-col class="pl-2 pr-0" cols="12" lg="4" md="4" sm="12">
+          <v-col class="pl-2 pr-0" cols="12" lg="3" md="3" sm="12">
             <v-sheet class=" pt-6 " elevation="4" height="100%" rounded>
               <v-sheet class="mx-6">
                 <div class="teal--text text-h5 my-6 text-start"> How to cite</div>
               </v-sheet>
               <v-divider></v-divider>
+              <v-sheet class="text-justify text-body-2 pa-3">
+                1. Zheng X, Zong W, Li Z, Ma Y, Sun Y, Xiong Z, Wu S, Yang F, Zhao W, Bu C, Du Z. CCAS: One-stop and
+                comprehensive annotation system for individual cancer genome at multi-omics level. Front Genet. 2022 Aug
+                11;13:956781. <br/>doi: 10.3389/fgene.2022.956781. eCollection 2022. PMID: <a
+                  href="https://pubmed.ncbi.nlm.nih.gov/36035123/" style="text-decoration: none" target="_blank">36035123</a>
+                <br/><br/>
+                2. Database Resources of the National Genomics Data Center, China National Center for Bioinformation in
+                2022 Nucleic Acids Res
+                . 2022 Jan 7;50(D1):D27-D38. <br/>doi: 10.1093/nar/gkab951. PMID: <a
+                  href="https://pubmed.ncbi.nlm.nih.gov/34718731/" style="text-decoration: none" target="_blank">34718731</a>
+              </v-sheet>
+            </v-sheet>
+          </v-col>
+          <v-col class="pl-2 pr-0" cols="12" lg="3" md="3" sm="12">
+            <v-sheet class=" pt-6 " elevation="4" height="100%" rounded>
+              <v-sheet class="mx-6">
+                <div class="teal--text text-h5 my-6 text-start"> Related resource</div>
+              </v-sheet>
+              <v-divider></v-divider>
+              <v-sheet class="text-justify text-body-2 pa-3">
+                <v-list class="overflow-y-auto overflow-x-hidden" max-height="220">
+                  <v-list-item v-for="(item,idx) in relatedlinks" :key="idx" :href="item.href" class="align--center"
+                               target="_blank">
+                    <v-sheet class="text-left">
+                      <v-icon>mdi-link-variant</v-icon> &nbsp;
+                      <span class="black--text font-weight-bold mr-3" style="white-space: nowrap">{{ item.name }}</span>
+
+                      <img :src="item.logo" height="20" style="display: inline-block;border: 1px solid darkgrey"></img>
+
+                    </v-sheet>
+
+                  </v-list-item>
+
+
+                </v-list>
+              </v-sheet>
             </v-sheet>
           </v-col>
 
@@ -676,7 +692,7 @@
 </template>
 
 <script>
-import {mapState, mapMutations} from 'vuex';
+import {mapState} from 'vuex';
 import CommonDoidGroup from "./sub/commonDoidGroup";
 import Axios from 'axios'
 import CommonHelpMessage from "./sub/commonHelpMessage";
@@ -689,6 +705,26 @@ export default {
     return {
       bannerimg: require('../assets/img/bg.jpeg'),
       baseurl: window.BASE_URL,
+      relatedlinks: [
+        {
+          href: "https://ngdc.cncb.ac.cn/macdb/home",
+          icon: "mdi-link-variant",
+          name: "MACdb",
+          logo: require('../../static/img/macdb.png'),
+        },
+        {
+          href: "https://ngdc.cncb.ac.cn/cancerscem/",
+          icon: "mdi-link-variant",
+          name: "CancerSCEM",
+          logo: require('../../static/img/cancerscem.png'),
+        },
+        {
+          href: "https://ngdc.cncb.ac.cn/ascancer/home",
+          icon: "mdi-link-variant",
+          name: "ASCancer Atlas",
+          logo: require('../../static/img/ascancer.png'),
+        },
+      ],
       homeNews: [
 
         {
@@ -866,8 +902,8 @@ export default {
 
 
       if (this.upload_data_file != null &&
-        this.upload_data_cancertype_doid != null &&
-        this.upload_data_refversion != null) {
+          this.upload_data_cancertype_doid != null &&
+          this.upload_data_refversion != null) {
         this.submitting = true;
 
         let submit_email = null
@@ -883,28 +919,28 @@ export default {
         pramasList.snvindeltype = this.upload_data_file_type;
         console.log(formData)
         Axios.post(
-          window.BASE_URL + "/api/home_submit",
-          formData,
-          {
-            // headers: {
-            //   'Accept': 'application/json',
-            //   'Content-Type': 'enctype=multipart/form-data'
-            // },
-            params: pramasList
-          }
-        ).then(res => {
-            if (res.status == "200") {
-              this.submitOK = true;
-              this.submitting = false;
-              this.msgshow = true;
-              this.submitUUID = res.data.jobid;
-              this.response_msg = `Your data is submitted! <br/>Please wait about 10 minutes until revieve the email notification for job completeness.<br/>Or you can check your job in "<a href="#/results">Check Results</a>" page with the job ID: ${res.data.jobid}`
-            } else {
-              this.submitting = false;
-              this.msgshow = true;
-              this.response_msg = `Submission failed!</br>In most cases, this is because the file you provide is in the wrong format. Please check your file format and try again. If you still encounter problems, please contact CCAs team (zhenxinchang@big.ac.cn)`
+            window.BASE_URL + "/api/home_submit",
+            formData,
+            {
+              // headers: {
+              //   'Accept': 'application/json',
+              //   'Content-Type': 'enctype=multipart/form-data'
+              // },
+              params: pramasList
             }
-          }
+        ).then(res => {
+              if (res.status == "200") {
+                this.submitOK = true;
+                this.submitting = false;
+                this.msgshow = true;
+                this.submitUUID = res.data.jobid;
+                this.response_msg = `Your data is submitted! <br/>Please wait about 10 minutes until revieve the email notification for job completeness.<br/>Or you can check your job in "<a href="#/results">Check Results</a>" page with the job ID: ${res.data.jobid}`
+              } else {
+                this.submitting = false;
+                this.msgshow = true;
+                this.response_msg = `Submission failed!</br>In most cases, this is because the file you provide is in the wrong format. Please check your file format and try again. If you still encounter problems, please contact CCAs team (zhenxinchang@big.ac.cn)`
+              }
+            }
         ).catch(reason => {
           this.submitting = false;
           this.msgshow = true;

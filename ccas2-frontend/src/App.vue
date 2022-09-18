@@ -19,20 +19,20 @@
           <v-sheet :color="barcolor" @click="$router.push('/home')">
             <v-row dense align="center">
               <v-spacer></v-spacer>
-              <v-col cols="3">
-                <span><v-img :src="logo" aspect-ratio="16/9" contain height="30"></v-img></span>
+              <v-col cols="6" >
+                <span><v-img :src="logo" aspect-ratio="16/9" contain height="40"></v-img></span>
               </v-col>
-              <v-col cols="4">
-                <v-sheet :color="$store.state.mainColor" dark class="font-weight-bold text-h6" >
-                  <div class="white--text text--darken-1 "
-                  >
-                    <span class="yellow--text text--darken-2">C</span>
-                    <span class="teal--text text--accent-3">C</span>
-                    <span class="purple--text ">A</span>
-                    <span class="deep-purple--text text--accent-4">S</span>
-                  </div>
-                </v-sheet>
-              </v-col>
+<!--              <v-col cols="4">-->
+<!--                <v-sheet :color="$store.state.mainColor" dark class="font-weight-bold text-h6" >-->
+<!--                  <div class="white&#45;&#45;text text&#45;&#45;darken-1 "-->
+<!--                  >-->
+<!--                    <span class="yellow&#45;&#45;text text&#45;&#45;darken-2">C</span>-->
+<!--                    <span class="teal&#45;&#45;text text&#45;&#45;accent-3">C</span>-->
+<!--                    <span class="purple&#45;&#45;text ">A</span>-->
+<!--                    <span class="deep-purple&#45;&#45;text text&#45;&#45;accent-4">S</span>-->
+<!--                  </div>-->
+<!--                </v-sheet>-->
+<!--              </v-col>-->
               <v-spacer></v-spacer>
             </v-row>
           </v-sheet>
@@ -82,7 +82,7 @@ export default {
   components: {FooterBar, HeaderBar},
   data() {
     return {
-      logo: require('./assets/logo.png'),
+      logo: require('./assets/logo2.png'),
       barcolor: this.$store.state.mainColor,
       headerbarClass: []
     }

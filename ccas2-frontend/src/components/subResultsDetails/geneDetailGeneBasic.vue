@@ -11,7 +11,7 @@
         </v-sheet>
       </v-col>
       <v-col class="text-left" cols="3">
-        <v-sheet :class="itemsClass">Ensembl ID</v-sheet>
+        <v-sheet :class="itemsClass">Ensembl ID <common-help-message>Gene ID from Ensembl</common-help-message>   </v-sheet>
         <v-sheet :class="itemsContentClass">
           <a style="text-decoration: none" class="teal--text" :href="$commonfunc.renderLinkEnsemblGene(dat.geneid && dat.geneid.replace('GENEID:', ''))" target="_blank">{{ dat.geneid && dat.geneid.replace('GENEID:', '') }}</a>
         </v-sheet>
@@ -131,13 +131,13 @@
 
 
       <v-col class="text-left" cols="3">
-        <v-sheet :class="itemsClass">Interactions:</v-sheet>
+        <v-sheet :class="itemsClass">Interactions:  <common-help-message>The contents are IDs from intAct database (https://www.ebi.ac.uk/intact/)</common-help-message></v-sheet>
         <v-sheet>
           <v-list :class="itemsListClass" height="200">
             <v-list-item
               v-for=" (x,idx) in (dat.data.uniprot[0] && dat.data.uniprot[0].InteractionList && dat.data.uniprot[0].InteractionList.split(/&&+/) || [])  "
               :key="idx">
-              <v-icon color="teal"> mdi-label-variant-outline</v-icon>&nbsp;&nbsp;{{ x }}
+              <v-icon color="teal"> mdi-label-variant-outline</v-icon>&nbsp;&nbsp; <span v-for="a in x.split(/\|/)"  v-show="a && a.indexOf('EBI-') != -1 || false " >{{ a  }}</span>
             </v-list-item>
           </v-list>
         </v-sheet>
@@ -177,9 +177,10 @@
 
 <script>
 import CommonHelpMessage from "../sub/commonHelpMessage";
+import Help from "../help";
 export default {
   name: "geneDetailGeneBasic",
-  components: {CommonHelpMessage},
+  components: {Help, CommonHelpMessage},
   props: ['dat'],
   data() {
     return {

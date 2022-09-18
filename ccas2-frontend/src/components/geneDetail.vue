@@ -13,12 +13,6 @@
               <v-breadcrumbs
                 divider="/"
               >
-                <!--                :items="[-->
-                <!--                {text:'home',disabled:false,to:'/home'},-->
-                <!--                {text:'check results',disabled:false,to:'/checkresults'},-->
-                <!--                {text:'results',disabled:false,to:'/annoresults/'+$route.params.jobid},-->
-                <!--                {text:$route.params.geneid,disabled:true},-->
-                <!--                ]"-->
 
                 <v-breadcrumbs-item to="/home">home</v-breadcrumbs-item> &nbsp; /
                 <v-breadcrumbs-item to="checkresults">check results</v-breadcrumbs-item>
@@ -93,7 +87,7 @@
                   <v-icon left>
                     mdi-circle-slice-8
                   </v-icon>
-                  Abnormalities in user uploaded data
+                  Abnormalities overview <common-help-message>This section shows the abnormalities in this gene in the data submitted by user.</common-help-message>
                 </v-tab>
                 <v-tab style="text-transform: none">
                   <v-icon left>
@@ -107,7 +101,7 @@
                   <v-icon left>
                     mdi-circle-slice-8
                   </v-icon>
-                  Assoicated cancer cohorts
+                  Assoicated cancer cohorts <common-help-message>This section shows the cancer cohorts that have abnormalities on this gene.</common-help-message>
                 </v-tab>
                 <v-tab style="text-transform: none">
                   <v-icon left>

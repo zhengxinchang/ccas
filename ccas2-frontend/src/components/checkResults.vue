@@ -139,7 +139,7 @@ name: "checkResults",
               alert("Job: "+this.jobid + " has some errors. This may be caused by incorrect input file format. Please check your input file and submit again. If you encounter this problem again, please contact email: zhengxichang@big.ac.cn .")
             }
             else if(res.data.status == "2:finished"){
-              this.$router.push({ name: 'annoresults', params: { jobid: this.jobid }})
+              this.$router.push({ name: 'annoresults', params: { jobid: this.jobid.trim() }})
             }
           })
         // this.$router.push('/annoresults/'+this.jobid)

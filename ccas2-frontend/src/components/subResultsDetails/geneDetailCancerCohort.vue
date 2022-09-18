@@ -51,9 +51,9 @@
       <v-spacer></v-spacer>
       <v-col class="text-right font-weight-bold teal--text text--lighten-2" cols="2">Data from
         <v-btn
-          color="teal lighten-3" dark elevation="0" href="https://www.intogen.org/" small
+          color="teal lighten-3" dark elevation="0" href="https://www.intogen.org/search" small
           style="text-transform: none"
-          target="_blank"> DGIdb
+          target="_blank"> IntOGen
         </v-btn>
       </v-col>
     </v-row>

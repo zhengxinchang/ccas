@@ -19,8 +19,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/ccas2-frontend" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="9f23caf7-af37-4b21-8f06-118729fea1f9" name="Default Changelist" comment="" />
@@ -29,13 +36,19 @@
       <option name="presentableId" value="Default" />
       <updated>1650455249701</updated>
       <workItem from="1650455250823" duration="12000" />
+      <workItem from="1652843854759" duration="600000" />
+      <workItem from="1653638076916" duration="186000" />
     </task>
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="-826" key="FileChooserDialogImpl" timestamp="1650455261018">
-      <screen x="0" y="-1160" width="1920" height="1160" />
+    <state x="636" y="-1037" key="FileChooserDialogImpl" timestamp="1652860400741">
+      <screen x="-351" y="-1440" width="2560" height="1400" />
     </state>
+    <state x="636" y="-1037" key="FileChooserDialogImpl/0.0.1920.1040/-351.-1440.2560.1400@-351.-1440.2560.1400" timestamp="1652860400741" />
     <state x="740" y="-826" key="FileChooserDialogImpl/0.0.1920.1040/0.-1160.1920.1160@0.-1160.1920.1160" timestamp="1650455261018" />
   </component>
 </project>
