@@ -1,0 +1,261 @@
+decompose v0.5
+
+options:     input VCF file        /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.input.snv.vcf
+         [s] smart decomposition   true (experimental)
+         [o] output VCF file       20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.decompose.vcf
+
+
+stats: no. variants                 : 543
+       no. biallelic variants       : 543
+       no. multiallelic variants    : 0
+
+       no. additional biallelics    : 0
+       total no. of biallelics      : 543
+
+Time elapsed: 0.00s
+
+left_normalize:OK
+normalize v0.5
+
+options:     input VCF file                                  20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.decompose.vcf
+         [o] output VCF file                                 20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.decompose.normalize.vcf
+         [w] sorting window size                             10000
+         [m] no fail on masked reference inconsistency       false
+         [n] no fail on reference inconsistency              true
+         [q] quiet                                           false
+         [d] debug                                           false
+         [r] reference FASTA file                            /canceranno/zhengxc/canceranno/reference/hg38/hg38.fa
+
+
+stats: biallelic
+          no. left trimmed                      : 0
+          no. right trimmed                     : 0
+          no. left and right trimmed            : 0
+          no. right trimmed and left aligned    : 0
+          no. left aligned                      : 0
+
+       total no. biallelic normalized           : 0
+
+       multiallelic
+          no. left trimmed                      : 0
+          no. right trimmed                     : 0
+          no. left and right trimmed            : 0
+          no. right trimmed and left aligned    : 0
+          no. left aligned                      : 0
+
+       total no. multiallelic normalized        : 0
+
+       total no. variants normalized            : 0
+       total no. variants observed              : 543
+       total no. reference observed             : 0
+
+Time elapsed: 0.00s
+
+split multi-allelic variants:OK
+add chr prefix:OK
+Possible precedence issue with control flow operator at /home/zhengxc/miniconda3/envs/canceranno/lib/site_perl/5.26.2/Bio/DB/IndexedBase.pm line 805.
+vep:OK
+
+NOTICE: Running with system command <convert2annovar.pl  -includeinfo -allsample -withfreq -format vcf4 20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.decompose.normalize.vep.vcf > /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.avinput>
+NOTICE: Finished reading 1005 lines from VCF file
+NOTICE: A total of 543 locus in VCF file passed QC threshold, representing 543 SNPs (427 transitions and 116 transversions) and 0 indels/substitutions
+NOTICE: Finished writing allele frequencies based on 543 SNP genotypes (427 transitions and 116 transversions) and 0 indels/substitutions for 0 samples
+
+NOTICE: Running with system command </canceranno/zhengxc/canceranno/annovar/annovar/table_annovar.pl /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.avinput /canceranno/zhengxc/canceranno/annovar/annovar/humandb/ -buildver hg38 -outfile /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535 -remove -protocol refGene,ensGene,knownGene,cytoBand,avsnp150,dbnsfp41a,clinvar_20210123,1000g2015aug_all,1000g2015aug_afr,1000g2015aug_eas,1000g2015aug_eur,1000g2015aug_sas,1000g2015aug_amr,gnomad30_genome,exac03 -operation g,g,g,r,f,f,f,f,f,f,f,f,f,f,f -nastring . -polish -otherinfo>
+-----------------------------------------------------------------
+NOTICE: Processing operation=g protocol=refGene
+
+NOTICE: Running with system command <annotate_variation.pl -geneanno -buildver hg38 -dbtype refGene -outfile /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.refGene -exonsort -nofirstcodondel /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.avinput /canceranno/zhengxc/canceranno/annovar/annovar/humandb/>
+NOTICE: Output files are written to /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.refGene.variant_function, /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.refGene.exonic_variant_function
+NOTICE: Reading gene annotation from /canceranno/zhengxc/canceranno/annovar/annovar/humandb/hg38_refGene.txt ... Done with 82500 transcripts (including 20366 without coding sequence annotation) for 28265 unique genes
+NOTICE: Processing next batch with 543 unique variants in 543 input lines
+NOTICE: Reading FASTA sequences from /canceranno/zhengxc/canceranno/annovar/annovar/humandb/hg38_refGeneMrna.fa ... Done with 1322 sequences
+WARNING: A total of 591 sequences will be ignored due to lack of correct ORF annotation
+
+NOTICE: Running with system command <coding_change.pl  /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.refGene.exonic_variant_function.orig /canceranno/zhengxc/canceranno/annovar/annovar/humandb//hg38_refGene.txt /canceranno/zhengxc/canceranno/annovar/annovar/humandb//hg38_refGeneMrna.fa -alltranscript -out /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.refGene.fa -newevf /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.refGene.exonic_variant_function>
+-----------------------------------------------------------------
+NOTICE: Processing operation=g protocol=ensGene
+
+NOTICE: Running with system command <annotate_variation.pl -geneanno -buildver hg38 -dbtype ensGene -outfile /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.ensGene -exonsort -nofirstcodondel /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.avinput /canceranno/zhengxc/canceranno/annovar/annovar/humandb/>
+NOTICE: Output files are written to /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.ensGene.variant_function, /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.ensGene.exonic_variant_function
+NOTICE: Reading gene annotation from /canceranno/zhengxc/canceranno/annovar/annovar/humandb/hg38_ensGene.txt ... Done with 89732 transcripts (including 28806 without coding sequence annotation) for 42087 unique genes
+NOTICE: Processing next batch with 543 unique variants in 543 input lines
+NOTICE: Reading FASTA sequences from /canceranno/zhengxc/canceranno/annovar/annovar/humandb/hg38_ensGeneMrna.fa ... Done with 914 sequences
+WARNING: A total of 290 sequences cannot be found in /canceranno/zhengxc/canceranno/annovar/annovar/humandb/hg38_ensGeneMrna.fa
+ (example: ENST00000367294.3#6#151452286 ENST00000344387.8#3#44625039 ENST00000374617.8#6#33279107)
+WARNING: A total of 385 sequences will be ignored due to lack of correct ORF annotation
+
+NOTICE: Running with system command <coding_change.pl  /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.ensGene.exonic_variant_function.orig /canceranno/zhengxc/canceranno/annovar/annovar/humandb//hg38_ensGene.txt /canceranno/zhengxc/canceranno/annovar/annovar/humandb//hg38_ensGeneMrna.fa -alltranscript -out /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.ensGene.fa -newevf /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.ensGene.exonic_variant_function>
+-----------------------------------------------------------------
+NOTICE: Processing operation=g protocol=knownGene
+
+NOTICE: Running with system command <annotate_variation.pl -geneanno -buildver hg38 -dbtype knownGene -outfile /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.knownGene -exonsort -nofirstcodondel /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.avinput /canceranno/zhengxc/canceranno/annovar/annovar/humandb/>
+NOTICE: Output files are written to /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.knownGene.variant_function, /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.knownGene.exonic_variant_function
+NOTICE: Reading gene annotation from /canceranno/zhengxc/canceranno/annovar/annovar/humandb/hg38_knownGene.txt ... Done with 226811 transcripts (including 118121 without coding sequence annotation) for 74691 unique genes
+NOTICE: Processing next batch with 543 unique variants in 543 input lines
+NOTICE: Reading FASTA sequences from /canceranno/zhengxc/canceranno/annovar/annovar/humandb/hg38_knownGeneMrna.fa ... Done with 1566 sequences
+WARNING: A total of 8181 sequences will be ignored due to lack of correct ORF annotation
+
+NOTICE: Running with system command <coding_change.pl  /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.knownGene.exonic_variant_function.orig /canceranno/zhengxc/canceranno/annovar/annovar/humandb//hg38_knownGene.txt /canceranno/zhengxc/canceranno/annovar/annovar/humandb//hg38_knownGeneMrna.fa -alltranscript -out /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.knownGene.fa -newevf /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.knownGene.exonic_variant_function>
+-----------------------------------------------------------------
+NOTICE: Processing operation=r protocol=cytoBand
+
+NOTICE: Running with system command <annotate_variation.pl -regionanno -dbtype cytoBand -buildver hg38 -outfile /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535 /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.avinput /canceranno/zhengxc/canceranno/annovar/annovar/humandb/>
+NOTICE: Output file is written to /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.hg38_cytoBand
+NOTICE: Reading annotation database /canceranno/zhengxc/canceranno/annovar/annovar/humandb/hg38_cytoBand.txt ... Done with 1433 regions
+NOTICE: Finished region-based annotation on 543 genetic variants
+-----------------------------------------------------------------
+NOTICE: Processing operation=f protocol=avsnp150
+
+NOTICE: Running system command <annotate_variation.pl -filter -dbtype avsnp150 -buildver hg38 -outfile /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535 /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.avinput /canceranno/zhengxc/canceranno/annovar/annovar/humandb/>
+NOTICE: Output file with variants matching filtering criteria is written to /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.hg38_avsnp150_dropped, and output file with other variants is written to /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.hg38_avsnp150_filtered
+NOTICE: Processing next batch with 543 unique variants in 543 input lines
+NOTICE: Database index loaded. Total number of bins is 28304406 and the number of bins to be scanned is 536
+NOTICE: Scanning filter database /canceranno/zhengxc/canceranno/annovar/annovar/humandb/hg38_avsnp150.txt...Done
+-----------------------------------------------------------------
+NOTICE: Processing operation=f protocol=dbnsfp41a
+NOTICE: Finished reading 51 column headers for '-dbtype dbnsfp41a'
+
+NOTICE: Running system command <annotate_variation.pl -filter -dbtype dbnsfp41a -buildver hg38 -outfile /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535 /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.avinput /canceranno/zhengxc/canceranno/annovar/annovar/humandb/ -otherinfo>
+NOTICE: Output file with variants matching filtering criteria is written to /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.hg38_dbnsfp41a_dropped, and output file with other variants is written to /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.hg38_dbnsfp41a_filtered
+NOTICE: Processing next batch with 543 unique variants in 543 input lines
+NOTICE: Database index loaded. Total number of bins is 556674 and the number of bins to be scanned is 512
+NOTICE: Scanning filter database /canceranno/zhengxc/canceranno/annovar/annovar/humandb/hg38_dbnsfp41a.txt...Done
+-----------------------------------------------------------------
+NOTICE: Processing operation=f protocol=clinvar_20210123
+NOTICE: Finished reading 5 column headers for '-dbtype clinvar_20210123'
+
+NOTICE: Running system command <annotate_variation.pl -filter -dbtype clinvar_20210123 -buildver hg38 -outfile /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535 /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.avinput /canceranno/zhengxc/canceranno/annovar/annovar/humandb/ -otherinfo>
+NOTICE: the --dbtype clinvar_20210123 is assumed to be in generic ANNOVAR database format
+NOTICE: Output file with variants matching filtering criteria is written to /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.hg38_clinvar_20210123_dropped, and output file with other variants is written to /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.hg38_clinvar_20210123_filtered
+NOTICE: Processing next batch with 543 unique variants in 543 input lines
+NOTICE: Database index loaded. Total number of bins is 75012 and the number of bins to be scanned is 232
+NOTICE: Scanning filter database /canceranno/zhengxc/canceranno/annovar/annovar/humandb/hg38_clinvar_20210123.txt...Done
+-----------------------------------------------------------------
+NOTICE: Processing operation=f protocol=1000g2015aug_all
+
+NOTICE: Running system command <annotate_variation.pl -filter -dbtype 1000g2015aug_all -buildver hg38 -outfile /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535 /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.avinput /canceranno/zhengxc/canceranno/annovar/annovar/humandb/>
+NOTICE: Output file with variants matching filtering criteria is written to /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.hg38_ALL.sites.2015_08_dropped, and output file with other variants is written to /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.hg38_ALL.sites.2015_08_filtered
+NOTICE: Processing next batch with 543 unique variants in 543 input lines
+NOTICE: Database index loaded. Total number of bins is 2821635 and the number of bins to be scanned is 526
+NOTICE: Scanning filter database /canceranno/zhengxc/canceranno/annovar/annovar/humandb/hg38_ALL.sites.2015_08.txt...Done
+-----------------------------------------------------------------
+NOTICE: Processing operation=f protocol=1000g2015aug_afr
+
+NOTICE: Running system command <annotate_variation.pl -filter -dbtype 1000g2015aug_afr -buildver hg38 -outfile /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535 /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.avinput /canceranno/zhengxc/canceranno/annovar/annovar/humandb/>
+NOTICE: Output file with variants matching filtering criteria is written to /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.hg38_AFR.sites.2015_08_dropped, and output file with other variants is written to /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.hg38_AFR.sites.2015_08_filtered
+NOTICE: Processing next batch with 543 unique variants in 543 input lines
+NOTICE: Database index loaded. Total number of bins is 2817370 and the number of bins to be scanned is 525
+NOTICE: Scanning filter database /canceranno/zhengxc/canceranno/annovar/annovar/humandb/hg38_AFR.sites.2015_08.txt...Done
+-----------------------------------------------------------------
+NOTICE: Processing operation=f protocol=1000g2015aug_eas
+
+NOTICE: Running system command <annotate_variation.pl -filter -dbtype 1000g2015aug_eas -buildver hg38 -outfile /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535 /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.avinput /canceranno/zhengxc/canceranno/annovar/annovar/humandb/>
+NOTICE: Output file with variants matching filtering criteria is written to /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.hg38_EAS.sites.2015_08_dropped, and output file with other variants is written to /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.hg38_EAS.sites.2015_08_filtered
+NOTICE: Processing next batch with 543 unique variants in 543 input lines
+NOTICE: Database index loaded. Total number of bins is 2810247 and the number of bins to be scanned is 525
+NOTICE: Scanning filter database /canceranno/zhengxc/canceranno/annovar/annovar/humandb/hg38_EAS.sites.2015_08.txt...Done
+-----------------------------------------------------------------
+NOTICE: Processing operation=f protocol=1000g2015aug_eur
+
+NOTICE: Running system command <annotate_variation.pl -filter -dbtype 1000g2015aug_eur -buildver hg38 -outfile /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535 /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.avinput /canceranno/zhengxc/canceranno/annovar/annovar/humandb/>
+NOTICE: Output file with variants matching filtering criteria is written to /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.hg38_EUR.sites.2015_08_dropped, and output file with other variants is written to /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.hg38_EUR.sites.2015_08_filtered
+NOTICE: Processing next batch with 543 unique variants in 543 input lines
+NOTICE: Database index loaded. Total number of bins is 2809469 and the number of bins to be scanned is 526
+NOTICE: Scanning filter database /canceranno/zhengxc/canceranno/annovar/annovar/humandb/hg38_EUR.sites.2015_08.txt...Done
+-----------------------------------------------------------------
+NOTICE: Processing operation=f protocol=1000g2015aug_sas
+
+NOTICE: Running system command <annotate_variation.pl -filter -dbtype 1000g2015aug_sas -buildver hg38 -outfile /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535 /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.avinput /canceranno/zhengxc/canceranno/annovar/annovar/humandb/>
+NOTICE: Output file with variants matching filtering criteria is written to /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.hg38_SAS.sites.2015_08_dropped, and output file with other variants is written to /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.hg38_SAS.sites.2015_08_filtered
+NOTICE: Processing next batch with 543 unique variants in 543 input lines
+NOTICE: Database index loaded. Total number of bins is 2813352 and the number of bins to be scanned is 525
+NOTICE: Scanning filter database /canceranno/zhengxc/canceranno/annovar/annovar/humandb/hg38_SAS.sites.2015_08.txt...Done
+-----------------------------------------------------------------
+NOTICE: Processing operation=f protocol=1000g2015aug_amr
+
+NOTICE: Running system command <annotate_variation.pl -filter -dbtype 1000g2015aug_amr -buildver hg38 -outfile /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535 /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.avinput /canceranno/zhengxc/canceranno/annovar/annovar/humandb/>
+NOTICE: Output file with variants matching filtering criteria is written to /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.hg38_AMR.sites.2015_08_dropped, and output file with other variants is written to /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.hg38_AMR.sites.2015_08_filtered
+NOTICE: Processing next batch with 543 unique variants in 543 input lines
+NOTICE: Database index loaded. Total number of bins is 2812567 and the number of bins to be scanned is 523
+NOTICE: Scanning filter database /canceranno/zhengxc/canceranno/annovar/annovar/humandb/hg38_AMR.sites.2015_08.txt...Done
+-----------------------------------------------------------------
+NOTICE: Processing operation=f protocol=gnomad30_genome
+NOTICE: Finished reading 13 column headers for '-dbtype gnomad30_genome'
+
+NOTICE: Running system command <annotate_variation.pl -filter -dbtype gnomad30_genome -buildver hg38 -outfile /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535 /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.avinput /canceranno/zhengxc/canceranno/annovar/annovar/humandb/ -otherinfo>
+NOTICE: Output file with variants matching filtering criteria is written to /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.hg38_gnomad30_genome_dropped, and output file with other variants is written to /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.hg38_gnomad30_genome_filtered
+NOTICE: Processing next batch with 543 unique variants in 543 input lines
+NOTICE: Database index loaded. Total number of bins is 2860873 and the number of bins to be scanned is 527
+NOTICE: Scanning filter database /canceranno/zhengxc/canceranno/annovar/annovar/humandb/hg38_gnomad30_genome.txt...Done
+-----------------------------------------------------------------
+NOTICE: Processing operation=f protocol=exac03
+NOTICE: Finished reading 8 column headers for '-dbtype exac03'
+
+NOTICE: Running system command <annotate_variation.pl -filter -dbtype exac03 -buildver hg38 -outfile /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535 /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.avinput /canceranno/zhengxc/canceranno/annovar/annovar/humandb/ -otherinfo>
+NOTICE: Output file with variants matching filtering criteria is written to /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.hg38_exac03_dropped, and output file with other variants is written to /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.hg38_exac03_filtered
+NOTICE: Processing next batch with 543 unique variants in 543 input lines
+NOTICE: Database index loaded. Total number of bins is 749044 and the number of bins to be scanned is 521
+NOTICE: Scanning filter database /canceranno/zhengxc/canceranno/annovar/annovar/humandb/hg38_exac03.txt...Done
+-----------------------------------------------------------------
+NOTICE: Multianno output file is written to /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.hg38_multianno.txt
+NOTICE: Reading from /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.hg38_multianno.txt
+-----------------------------------------------------------------
+NOTICE: VCF output is written to /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.hg38_multianno.vcf
+annovar:OK
+bgZip compression:OK
+[E::hts_idx_push] Chromosome blocks not continuous
+tbx_index_build failed: /canceranno/zhengxc/ccas2/workspace/public/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535/20220528164833_de6e5b28-9360-43f1-885f-9abcc312a535.hg38_multianno.vcf.gz
+tabix indexing:crash
+
+=============================================
+vcfanno version 0.3.2 [built with go1.12.1]
+
+see: https://github.com/brentp/vcfanno
+=============================================
+vcfanno.go:115: found 55 sources from 6 files
+vcfanno.go:156: falling back to non-bgzip
+vcfanno.go:194: Info Error: COSMIC_NONCODING_ID_sample not found in header >> this error/warning may occur many times. reporting once here...
+bix.go:251: chromosome chr13 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr13 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr13 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr8 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr22 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr8 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr20 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+vcfanno.go:194: Info Error: COSMIC_CODING_ID_sample not found in header >> this error/warning may occur many times. reporting once here...
+bix.go:251: chromosome chr18 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr20 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr8 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr8 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr8 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr8 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr8 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr8 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr8 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr8 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr8 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr8 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr8 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr8 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr8 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr8 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr8 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr8 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr13 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr13 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr13 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr13 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr13 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr13 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr13 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr18 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr18 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr18 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr18 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr18 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr18 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr18 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+bix.go:251: chromosome chr18 not found in /canceranno/zhengxc/canceranno/databases/cgi/cgi_biomarkers_per_variant.sort.vcf.gz
+vcfanno.go:248: annotated 543 variants in 3.70 seconds (146.8 / second)
+vcfAnno:OK

@@ -687,7 +687,15 @@
       </v-col>
       <v-spacer></v-spacer>
     </v-row>
+<!--    <v-row>-->
+<!--      <v-col>-->
 
+<!--        <script type="text/javascript" src="https://freehitcounters.org/count/blls"></script><br>-->
+<!--        <noscript>-->
+<!--          <a href='https://drweiglundpartner.de/'>Pflege beantragen</a> <script type='text/javascript' src='https://whomania.com/ctr?id=9bf2d77e30cd3fcea5ddd08206a5db24c0db46d0'></script>-->
+<!--        </noscript>-->
+<!--      </v-col>-->
+<!--    </v-row>-->
   </v-container>
 </template>
 

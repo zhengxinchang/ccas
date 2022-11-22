@@ -1,0 +1,212 @@
+{
+    "S1": {
+        "ID": "1",
+        "CancerTypes": " Signature 1 has been found in all cancer types and in most cancer samples.",
+        "ProposedAetiology": "Signature 1 is the result of an endogenous mutational process initiated by spontaneous deamination of 5-methylcytosine.",
+        "AdditionalFeatures": "Signature 1 is associated with small numbers of small insertions and deletions in most tissue types.",
+        "Comments": "The number of Signature 1 mutations correlates with age of cancer diagnosis."
+    },
+    "S10": {
+        "ID": "10",
+        "CancerTypes": " Signature 10 has been found in six cancer types, notably colorectal and uterine cancer, usually generating huge numbers of mutations in small subsets of samples.",
+        "ProposedAetiology": "It has been proposed that the mutational process underlying this signature is altered activity of the error-prone polymerase POLE. The presence of large numbers of Signature 10 mutations is associated with recurrent POLE somatic mutations, viz., Pro286Arg and Val411Leu.",
+        "AdditionalFeatures": "Signature 10 exhibits strand bias for C>A mutations at TpCpT context and T>G mutations at TpTpT context.",
+        "Comments": "Signature 10 is associated with some of most mutated cancer samples. Samples exhibiting this mutational signature have been termed ultra-hypermutators."
+    },
+    "S11": {
+        "ID": "11",
+        "CancerTypes": " Signature 11 has been found in melanoma and glioblastoma.",
+        "ProposedAetiology": "Signature 11 exhibits a mutational pattern resembling that of alkylating agents. Patient histories have revealed an association between treatments with the alkylating agent temozolomide and Signature 11 mutations.",
+        "AdditionalFeatures": "Signature 11 exhibits a strong transcriptional strand-bias for C>T substitutions indicating that mutations occur on guanine and that these mutations are effectively repaired by transcription-coupled nucleotide excision repair.",
+        "Comments": "NA"
+    },
+    "S12": {
+        "ID": "12",
+        "CancerTypes": " Signature 12 has been found in liver cancer.",
+        "ProposedAetiology": "The aetiology of Signature 12 remains unknown.",
+        "AdditionalFeatures": "Signature 12 exhibits a strong transcriptional strand-bias for T>C substitutions.",
+        "Comments": "Signature 12 usually contributes a small percentage (<20%) of the mutations observed in a liver cancer sample."
+    },
+    "S13": {
+        "ID": "13",
+        "CancerTypes": " Signature 13 has been found in 22 cancer types and seems to be commonest in cervical and bladder cancers. In most of these 22 cancer types, Signature 13 is present in at least 10% of samples.",
+        "ProposedAetiology": "Signature 13 has been attributed to activity of the AID/APOBEC family of cytidine deaminases converting cytosine to uracil. On the basis of similarities in the sequence context of cytosine mutations caused by APOBEC enzymes in experimental systems, a role for APOBEC1, APOBEC3A and/or APOBEC3B in human cancer appears more likely than for other members of the family. Signature 13 causes predominantly C>G mutations. This may be due to generation of abasic sites after removal of uracil by base excision repair and replication over these abasic sites by REV1.",
+        "AdditionalFeatures": "Transcriptional strand bias of mutations has been observed in exons, but is not present or is weaker in introns.",
+        "Comments": "Signature 2 is usually found in the same samples as Signature 13. It has been proposed that activation of AID/APOBEC cytidine deaminases is due to viral infection, retrotransposon jumping or to tissue inflammation. Currently, there is limited evidence to support these hypotheses. A germline deletion polymorphism involving APOBEC3A and APOBEC3B is associated with the presence of large numbers of Signature 2 and 13 mutations and with predisposition to breast cancer. Mutations of similar patterns to Signatures 2 and 13 are commonly found in the phenomenon of local hypermutation present in some cancers, known as kataegis, potentially implicating AID/APOBEC enzymes in this process as well."
+    },
+    "S14": {
+        "ID": "14",
+        "CancerTypes": " Signature 14 has been observed in four uterine cancers and a single adult low-grade glioma sample.",
+        "ProposedAetiology": "The aetiology of Signature 14 remains unknown.",
+        "AdditionalFeatures": "NA",
+        "Comments": "Signature 14 generates very high numbers of somatic mutations (>200 mutations per MB) in all samples in which it has been observed."
+    },
+    "S15": {
+        "ID": "15",
+        "CancerTypes": " Signature 15 has been found in several stomach cancers and a single small cell lung carcinoma.",
+        "ProposedAetiology": "Signature 15 is associated with defective DNA mismatch repair.",
+        "AdditionalFeatures": "Signature 15 is associated with high numbers of small (shorter than 3bp) insertions and deletions at mono/polynucleotide repeats.",
+        "Comments": "Signature 15 is one of four mutational signatures associated with defective DNA mismatch repair and is often found in the same samples as Signatures 6, 20, and 26."
+    },
+    "S16": {
+        "ID": "16",
+        "CancerTypes": " Signature 16 has been found in liver cancer.",
+        "ProposedAetiology": "The aetiology of Signature 16 remains unknown.",
+        "AdditionalFeatures": "Signature 16 exhibits an extremely strong transcriptional strand bias for T>C mutations at ApTpN context, with T>C mutations occurring almost exclusively on the transcribed strand.",
+        "Comments": "NA"
+    },
+    "S17": {
+        "ID": "17",
+        "CancerTypes": " Signature 17 has been found in oesophagus cancer, breast cancer, liver cancer, lung adenocarcinoma, B-cell lymphoma, stomach cancer and melanoma.",
+        "ProposedAetiology": "The aetiology of Signature 17 remains unknown.",
+        "AdditionalFeatures": "NA",
+        "Comments": "NA"
+    },
+    "S18": {
+        "ID": "18",
+        "CancerTypes": " Signature 18 has been found commonly in neuroblastoma. Additionally, Signature 18 has been also observed in breast and stomach carcinomas.",
+        "ProposedAetiology": "The aetiology of Signature 18 remains unknown.",
+        "AdditionalFeatures": "NA",
+        "Comments": "NA"
+    },
+    "S19": {
+        "ID": "19",
+        "CancerTypes": " Signature 19 has been found only in pilocytic astrocytoma.",
+        "ProposedAetiology": "The aetiology of Signature 19 remains unknown.",
+        "AdditionalFeatures": "NA",
+        "Comments": "NA"
+    },
+    "S2": {
+        "ID": "2",
+        "CancerTypes": " Signature 2 has been found in 22 cancer types, but most commonly in cervical and bladder cancers. In most of these 22 cancer types, Signature 2 is present in at least 10% of samples.",
+        "ProposedAetiology": "Signature 2 has been attributed to activity of the AID/APOBEC family of cytidine deaminases. On the basis of similarities in the sequence context of cytosine mutations caused by APOBEC enzymes in experimental systems, a role for APOBEC1, APOBEC3A and/or APOBEC3B in human cancer appears more likely than for other members of the family.",
+        "AdditionalFeatures": "Transcriptional strand bias of mutations has been observed in exons, but is not present or is weaker in introns.NA",
+        "Comments": "Signature 2 is usually found in the same samples as Signature 13. It has been proposed that activation of AID/APOBEC cytidine deaminases is due to viral infection, retrotransposon jumping or to tissue inflammation. Currently, there is limited evidence to support these hypotheses. A germline deletion polymorphism involving APOBEC3A and APOBEC3B is associated with the presence of large numbers of Signature 2 and 13 mutations and with predisposition to breast cancer. Mutations of similar patterns to Signatures 2 and 13 are commonly found in the phenomenon of local hypermutation present in some cancers, known as kataegis, potentially implicating AID/APOBEC enzymes in this process as well."
+    },
+    "S20": {
+        "ID": "20",
+        "CancerTypes": " Signature 20 has been found in stomach and breast cancers.",
+        "ProposedAetiology": "Signature 20 is believed to be associated with defective DNA mismatch repair.",
+        "AdditionalFeatures": "Signature 20 is associated with high numbers of small (shorter than 3bp) insertions and deletions at mono/polynucleotide repeats.",
+        "Comments": "Signature 20 is one of four mutational signatures associated with defective DNA mismatch repair and is often found in the same samples as Signatures 6, 15, and 26."
+    },
+    "S21": {
+        "ID": "21",
+        "CancerTypes": " Signature 21 has been found only in stomach cancer.",
+        "ProposedAetiology": "The aetiology of Signature 21 remains unknown.",
+        "AdditionalFeatures": "NA",
+        "Comments": "Signature 21 is found only in four samples all generated by the same sequencing centre. The mutational pattern of Signature 21 is somewhat similar to the one of Signature 26. Additionally, Signature 21 is found only in samples that also have Signatures 15 and 20. As such, Signature 21 is probably also related to microsatellite unstable tumours."
+    },
+    "S22": {
+        "ID": "22",
+        "CancerTypes": " Signature 22 has been found in urothelial (renal pelvis) carcinoma and liver cancers.",
+        "ProposedAetiology": "Signature 22 has been found in cancer samples with known exposures to aristolochic acid. Additionally, the pattern of mutations exhibited by the signature is consistent with the one previous observed in experimental systems exposed to aristolochic acid.",
+        "AdditionalFeatures": "Signature 22 exhibits a very strong transcriptional strand bias for T>A mutations indicating adenine damage that is being repaired by transcription-coupled nucleotide excision repair.",
+        "Comments": "Signature 22 has a very high mutational burden in urothelial carcinoma; however, its mutational burden is much lower in liver cancers."
+    },
+    "S23": {
+        "ID": "23",
+        "CancerTypes": " Signature 23 has been found only in a single liver cancer sample.",
+        "ProposedAetiology": "The aetiology of Signature 23 remains unknown.",
+        "AdditionalFeatures": "Signature 23 exhibits very strong transcriptional strand bias for C>T mutations.",
+        "Comments": "NA"
+    },
+    "S24": {
+        "ID": "24",
+        "CancerTypes": " Signature 24 has been observed in a subset of liver cancers.",
+        "ProposedAetiology": "Signature 24 has been found in cancer samples with known exposures to aflatoxin. Additionally, the pattern of mutations exhibited by the signature is consistent with that previous observed in experimental systems exposed to aflatoxin.",
+        "AdditionalFeatures": "Signature 24 exhibits a very strong transcriptional strand bias for C>A mutations indicating guanine damage that is being repaired by transcription-coupled nucleotide excision repair.",
+        "Comments": "NA"
+    },
+    "S25": {
+        "ID": "25",
+        "CancerTypes": " Signature 25 has been observed in Hodgkin lymphomas.",
+        "ProposedAetiology": "The aetiology of Signature 25 remains unknown.",
+        "AdditionalFeatures": "Signature 25 exhibits transcriptional strand bias for T>A mutations.",
+        "Comments": "This signature has only been identified in Hodgkin\u2019s cell lines. Data is not available from primary Hodgkin lymphomas."
+    },
+    "S26": {
+        "ID": "26",
+        "CancerTypes": " Signature 26 has been found in breast cancer, cervical cancer, stomach cancer and uterine carcinoma.",
+        "ProposedAetiology": "Signature 26 is believed to be associated with defective DNA mismatch repair.",
+        "AdditionalFeatures": "Signature 26 is associated with high numbers of small (shorter than 3bp) insertions and deletions at mono/polynucleotide repeats.",
+        "Comments": "Signature 26 is one of four mutational signatures associated with defective DNA mismatch repair and is often found in the same samples as Signatures 6, 15 and 20."
+    },
+    "S27": {
+        "ID": "27",
+        "CancerTypes": " Signature 27 has been observed in a subset of kidney clear cell carcinomas.",
+        "ProposedAetiology": "The aetiology of Signature 27 remains unknown.",
+        "AdditionalFeatures": "Signature 27 exhibits very strong transcriptional strand bias for T>A mutations. Signature 27 is associated with high numbers of small (shorter than 3bp) insertions and deletions at mono/polynucleotide repeats.",
+        "Comments": "NA"
+    },
+    "S28": {
+        "ID": "28",
+        "CancerTypes": " Signature 28 has been observed in a subset of stomach cancers.",
+        "ProposedAetiology": "The aetiology of Signature 28 remains unknown.",
+        "AdditionalFeatures": "NA",
+        "Comments": "NA"
+    },
+    "S29": {
+        "ID": "29",
+        "CancerTypes": " Signature 29 has been observed only in gingivo-buccal oral squamous cell carcinoma.",
+        "ProposedAetiology": "Signature 29 has been found in cancer samples from individuals with a tobacco chewing habit.",
+        "AdditionalFeatures": "Signature 29 exhibits transcriptional strand bias for C>A mutations indicating guanine damage that is most likely repaired by transcription-coupled nucleotide excision repair. Signature 29 is also associated with CC>AA dinucleotide substitutions.",
+        "Comments": "The Signature 29 pattern of C>A mutations due to tobacco chewing appears different from the pattern of mutations due to tobacco smoking reflected by Signature 4."
+    },
+    "S3": {
+        "ID": "3",
+        "CancerTypes": " Signature 3 has been found in breast, ovarian, and pancreatic cancers.",
+        "ProposedAetiology": "Signature 3 is associated with failure of DNA double-strand break-repair by homologous recombination.",
+        "AdditionalFeatures": "Signature 3 associates strongly with elevated numbers of large (longer than 3bp) insertions and deletions with overlapping microhomology at breakpoint junctions.",
+        "Comments": "Signature 3 is strongly associated with germline and somatic BRCA1 and BRCA2 mutations in breast, pancreatic, and ovarian cancers. In pancreatic cancer, responders to platinum therapy usually exhibit Signature 3 mutations."
+    },
+    "S30": {
+        "ID": "30",
+        "CancerTypes": " Signature 30 has been observed in a small subset of breast cancers.",
+        "ProposedAetiology": "The aetiology of Signature 30 remains unknown.",
+        "AdditionalFeatures": "NA",
+        "Comments": "NA"
+    },
+    "S4": {
+        "ID": "4",
+        "CancerTypes": " Signature 4 has been found in head and neck cancer, liver cancer, lung adenocarcinoma, lung squamous carcinoma, small cell lung carcinoma, and oesophageal cancer.",
+        "ProposedAetiology": "Signature 4 is associated with smoking and its profile is similar to the mutational pattern observed in experimental systems exposed to tobacco carcinogens (e.g., benzo[a]pyrene). Signature 4 is likely due to tobacco mutagens.",
+        "AdditionalFeatures": "Signature 4 exhibits transcriptional strand bias for C>A mutations, compatible with the notion that damage to guanine is repaired by transcription-coupled nucleotide excision repair. Signature 4 is also associated with CC>AA dinucleotide substitutions.",
+        "Comments": "Signature 29 is found in cancers associated with tobacco chewing and appears different from Signature 4."
+    },
+    "S5": {
+        "ID": "5",
+        "CancerTypes": " Signature 5 has been found in all cancer types and most cancer samples.",
+        "ProposedAetiology": "The aetiology of Signature 5 is unknown.",
+        "AdditionalFeatures": "Signature 5 exhibits transcriptional strand bias for T>C substitutions at ApTpN context.",
+        "Comments": "NA"
+    },
+    "S6": {
+        "ID": "6",
+        "CancerTypes": " Signature 6 has been found in 17 cancer types and is most common in colorectal and uterine cancers. In most other cancer types, Signature 6 is found in less than 3% of examined samples.",
+        "ProposedAetiology": "Signature 6 is associated with defective DNA mismatch repair and is found in microsatellite unstable tumours.",
+        "AdditionalFeatures": "Signature 6 is associated with high numbers of small (shorter than 3bp) insertions and deletions at mono/polynucleotide repeats.",
+        "Comments": "Signature 6 is one of four mutational signatures associated with defective DNA mismatch repair and is often found in the same samples as Signatures 15, 20, and 26."
+    },
+    "S7": {
+        "ID": "7",
+        "CancerTypes": " Signature 7 has been found predominantly in skin cancers and in cancers of the lip categorized as head and neck or oral squamous cancers.",
+        "ProposedAetiology": "Based on its prevalence in ultraviolet exposed areas and the similarity of the mutational pattern to that observed in experimental systems exposed to ultraviolet light Signature 7 is likely due to ultraviolet light exposure.",
+        "AdditionalFeatures": "Signature 7 is associated with large numbers of CC>TT dinucleotide mutations at dipyrimidines. Additionally, Signature 7 exhibits a strong transcriptional strand-bias indicating that mutations occur at pyrimidines (viz., by formation of pyrimidine-pyrimidine photodimers) and these mutations are being repaired by transcription-coupled nucleotide excision repair.",
+        "Comments": "NA"
+    },
+    "S8": {
+        "ID": "8",
+        "CancerTypes": " Signature 8 has been found in breast cancer and medulloblastoma.",
+        "ProposedAetiology": "The aetiology of Signature 8 remains unknown.",
+        "AdditionalFeatures": "Signature 8 exhibits weak strand bias for C>A substitutions and is associated with double nucleotide substitutions, notably CC>AA.",
+        "Comments": "NA"
+    },
+    "S9": {
+        "ID": "9",
+        "CancerTypes": " Signature 9 has been found in chronic lymphocytic leukaemias and malignant B-cell lymphomas.",
+        "ProposedAetiology": "Signature 9 is characterized by a pattern of mutations that has been attributed to polymerase \u03b7, which is implicated with the activity of AID during somatic hypermutation.",
+        "AdditionalFeatures": "NA",
+        "Comments": "Chronic lymphocytic leukaemias that possess immunoglobulin gene hypermutation (IGHV-mutated) have elevated numbers of mutations attributed to Signature 9 compared to those that do not have immunoglobulin gene hypermutation."
+    }
+}

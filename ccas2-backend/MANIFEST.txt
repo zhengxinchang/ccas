@@ -1,0 +1,13 @@
+id	filename	md5	size	state
+1259b7b2-7b8f-4c58-8688-a8349bd4bac4	1259b7b2-7b8f-4c58-8688-a8349bd4bac4/2187a134-28ab-46af-b5ab-bb8159d1f1ff.methylation_array.sesame.level3betas.txt	b5b2b4b33aef3fa1f2ed86a3fe43d088	13156129	validated
+31703496-4401-403a-afb4-9f1aac7c8398	31703496-4401-403a-afb4-9f1aac7c8398/CYMES_p_TCGAb_389_390_NSP_GenomeWideSNP_6_D12_1464298.grch38.seg.v2.txt	b011540542542de4fcfb0c33041ccd34	31337	validated
+62da3aa2-158e-42ac-a6b6-74dcf0d0e039	62da3aa2-158e-42ac-a6b6-74dcf0d0e039/TCGA-PRAD.9194d904-9ae2-470b-bfd8-a78934b97a0c.gene_level_copy_number.v36.tsv	a8bb3d349d8b1591500d9e1f9af53b35	3446864	validated
+7ecb5dee-4f42-4c7c-add1-54801d96f67c	7ecb5dee-4f42-4c7c-add1-54801d96f67c/CYMES_p_TCGAb_389_390_NSP_GenomeWideSNP_6_E01_1464252.nocnv_grch38.seg.v2.txt	35a3ec9f2d511e88a0fcadf4643c94fb	30352	validated
+88561704-224b-4937-92f3-5b0f6e27d776	88561704-224b-4937-92f3-5b0f6e27d776/464d15d7-4600-490a-aeea-c457ee97f410.mirbase21.isoforms.quantification.txt	b82990962f9f7c489a247ed9f3f88800	210044	validated
+8d2af685-c009-47be-b49a-b5bf91cbafe5	8d2af685-c009-47be-b49a-b5bf91cbafe5/e379840a-1bb6-4ec6-8965-1c21930ac8ac.wxs.aliquot_ensemble_masked.maf.gz	b169431ea6bfe4edc8f7796b3229308c	13336	validated
+92a7d76f-3e23-43b5-b4ef-3db279dcfeda	92a7d76f-3e23-43b5-b4ef-3db279dcfeda/CYMES_p_TCGAb_389_390_NSP_GenomeWideSNP_6_E01_1464252.grch38.seg.v2.txt	a35a290785328af40bd75f39fe5d891c	61650	validated
+abe08f86-11c0-4485-8cb1-db31ce8d1aeb	abe08f86-11c0-4485-8cb1-db31ce8d1aeb/7058afac-43e6-41e5-aae1-b2fca82a2e27.rna_seq.augmented_star_gene_counts.tsv	3d206a368fdfdac1dae6ab9f7cf538ed	4229424	validated
+b63f9119-5900-49d3-a1ca-9e3135c15491	b63f9119-5900-49d3-a1ca-9e3135c15491/464d15d7-4600-490a-aeea-c457ee97f410.mirbase21.mirnas.quantification.txt	7fe49d7ed97a249fd8ec35176a62a97c	50076	validated
+c8244690-5af3-4139-bdc7-f4ac5d8deb9b	c8244690-5af3-4139-bdc7-f4ac5d8deb9b/CYMES_p_TCGAb_389_390_NSP_GenomeWideSNP_6_D12_1464298.nocnv_grch38.seg.v2.txt	aa308531c80761cb6db21a1d1a249868	3311	validated
+cc8cde2a-d1a9-42e7-8003-8056339842c8	cc8cde2a-d1a9-42e7-8003-8056339842c8/TCGA-PRAD.9194d904-9ae2-470b-bfd8-a78934b97a0c.ascat2.allelic_specific.seg.txt	690ba79c8035ae915bb72f75699bdfaf	15343	validated
+\N	8d2af685-c009-47be-b49a-b5bf91cbafe5/annotations.txt	42e319306afc16c5a866fa150982c77f	862	\N
